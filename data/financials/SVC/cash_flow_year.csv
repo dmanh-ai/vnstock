@@ -1,0 +1,51 @@
+﻿item,item_en,2025,2024,2023,2022
+I. Lưu chuyển tiền từ hoạt động kinh doanh, I. CASH FLOWS FROM OPERATING ACTIVITIES ,,,,
+1. Lợi nhuận trước thuế,1. Profit before tax,694163906.0,261625288.0,48873291.0,692347060.0
+2. Điều chỉnh cho các khoản, 2. Adjustments for: ,,,,
+ Khấu hao TSCĐ và BĐSĐT,Depreciation of fixed assets and properties investment,207667050.0,170755382.0,145306536.0,112993508.0
+Các khoản dự phòng,(Reversal of provisions)/provisions,-699785.0,3489494.0,-889093.0,1217297.0
+"Lãi, lỗ chênh lệch tỷ giá hối đoái do đánh giá lại các khoản mục tiền tệ có gốc ngoại tệ",Foreign exchange (gain)/loss from revaluation of monetary items denominated in foreign currencies,,,-91.0,
+"Lãi, lỗ từ hoạt động đầu tư",Loss/(profit) from investment activities,-853036371.0,-138079878.0,-50244977.0,-218685579.0
+Chi phí lãi vay,Interest expense,327077105.0,173475897.0,191728948.0,94252108.0
+"Lãi, lỗ từ thanh lý TSCĐ",Loss/(profits) from disposal of fixed asset,,,,
+Thu nhập lãi vay và cổ tức,Interest income and dividends,,,,
+Phân bổ lợi thế thương mại,Allocation of goodwill,,,,
+Điều chỉnh cho các khoản khác,Adjustments for,,,,
+3. Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động,3. Operating profit before changes in  working capital,375171905.0,471266183.0,334774614.0,682124394.0
+"Tăng, giảm các khoản phải thu",(Increase)/decrease in receivables,-1814456682.0,216894976.0,-912157231.0,-75005380.0
+"Tăng, giảm hàng tồn kho",(Increase)/decrease in inventories,-78671713.0,-243767920.0,554697217.0,-643192312.0
+"Tăng, giảm các khoản phải trả (không kể lãi vay phải trả, thuế thu nhập phải nộp)","Increase/(decrease) in payables (other than interest, corporate income tax)",1184177280.0,-188330986.0,548437578.0,198959946.0
+"Tăng, giảm chi phí trả trước",(Increase)/decrease in prepaid expenses,-29365215.0,-49080354.0,-28457722.0,-7247870.0
+"Tăng, giảm chứng khoán kinh doanh",Changes in available for sale securities,,,-822940.0,-2474977.0
+Tiền lãi vay đã trả,Interest paid,-309426989.0,-156815734.0,-189410176.0,-92156943.0
+Thuế thu nhập doanh nghiệp đã nộp,Corporate income tax paid,-55872722.0,-37572745.0,-52936583.0,-85236860.0
+Tiền thu khác từ hoạt động kinh doanh,Other receipts from operating activities,,,2181665.0,
+Tiền chi khác cho hoạt động kinh doanh,Other payments for operating activities,-3067517.0,-3191027.0,-8729871.0,-5877459.0
+Lưu chuyển tiền thuần từ hoạt động kinh doanh,Net cash flows from operating activities,-731511652.0,9402392.0,247576551.0,-30107461.0
+II. Lưu chuyển tiền từ hoạt động đầu tư, II. CASH FLOWS FROM INVESTING ACTIVITIES ,,,,
+"1. Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác","1. Payment for fixed assets, constructions and other long-term assets",-563844286.0,-216857960.0,-269175015.0,-257999499.0
+"2. Tiền thu từ thanh lý, nhượng bán TSCĐ và các tài sản dài hạn khác",2. Receipts from disposal of fixed assets and other long-term assets,122151878.0,73978793.0,62573858.0,41218566.0
+"3. Tiền chi cho vay, mua các công cụ nợ của đơn vị khác","3. Loans, purchases of other entities' debt instruments ",-2628722262.0,-647221577.0,-115959423.0,-102514124.0
+"4. Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác","4. Receipts from loan repayments, sale of other entities' debt instruments ",2146880000.0,378311536.0,80827146.0,34157190.0
+5. Tiền chi đầu tư góp vốn vào đơn vị khác,5. Payments for investment in other entities,-117115228.0,-75142859.0,-505321917.0,-35833108.0
+6. Tiền thu hồi đầu tư góp vốn vào đơn vị khác,6. Collections on investment in other entities,926715707.0,70400000.0,1178895.0,
+"7. Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia","7. Dividends, interest and profit received",106529853.0,55026809.0,39701711.0,105750778.0
+8. Tăng giảm tiền gửi ngân hàng có kỳ hạn,8. Increase/(Decrease) in term deposit,,,,
+9. Mua lại khoản góp vốn của cổ đông thiểu số trong công ty con,9. Purchases of minority shares of subsidiaries,,,,
+10. Tiền thu khác từ hoạt động đầu tư,10. Other receipts from investing activities,,,,
+11. Tiền chi khác cho hoạt động đầu tư,11. Other payments for investing activities,,,,
+Lưu chuyển tiền thuần từ hoạt động đầu tư,Net cash flows from investing activities,-7404338.0,-361505259.0,-706174745.0,-215220197.0
+III. Lưu chuyển tiền từ hoạt động tài chính, III. CASH FLOWS FROM FINANCING ACTIVITIES ,,,,
+"1. Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu",1. Receipts from equity issue and owner's capital contribution,3676000.0,319700500.0,35556500.0,35840241.0
+"2. Tiền chi trả vốn góp cho các chủ sở hữu, mua lại cổ phiếu của doanh nghiệp đã phát hành",2. Payment for share repurchases ,-2875000.0,,,
+3. Tiền thu từ đi vay,3. Proceeds from borrowings,18458377028.0,16739628559.0,14944395183.0,10843440415.0
+4. Tiền trả nợ gốc vay, 4. Principal repayments  ,-17793216334.0,-16119655726.0,-14489943237.0,-10220697949.0
+5. Tiền trả nợ gốc thuê tài chính,5. Repayment of financial leases,-3161338.0,-2280724.0,-877336.0,
+"6. Cổ tức, lợi nhuận đã trả cho chủ sở hữu ","6. Dividends paid, profits distributed to owners",-94534410.0,-150361458.0,-111744683.0,-171199336.0
+7. Tiền thu khác từ hoạt động tài chính,7. Other receipts from financing activities,,,,
+8. Tiền chi khác cho hoạt động tài chính,8. Other payments for financing activities,,,,
+Lưu chuyển tiền thuần từ hoạt động tài chính,Net cash flows from financing activities,568265946.0,787031151.0,377386428.0,487383372.0
+Lưu chuyển tiền thuần trong kỳ,Net cash flows during the period ,-170650044.0,434928284.0,-81211766.0,242055713.0
+Tiền và tương đương tiền đầu kỳ,Cash and cash equivalents at beginning of the period,877792221.0,442863937.0,524075418.0,282019704.0
+Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ,Exchange difference due to re-valuation of ending balances,,,286.0,
+Tiền và tương đương tiền cuối kỳ,Cash and cash equivalents at end of the period,707142177.0,877792221.0,442863937.0,524075418.0

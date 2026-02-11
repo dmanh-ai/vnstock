@@ -1,0 +1,22 @@
+﻿item,item_en,2024,2023,2022,2021
+A. TÀI SẢN,ASSETS,,,,
+1. Tiền gửi ngân hàng,1. Cash in bank,34117662.0,42574415.0,58190865.0,20443193.0
+2. Đầu tư chứng khoán,2. Investments in securities ,6739824186.0,7510991341.0,7336948764.0,
+3. Đầu tư khác,3. Other investments,,,,10907364524.0
+4. Phải thu hoạt động đầu tư,4. Receivables from securities trading,15990900.0,2701965.0,10302121.0,
+5. Phải thu khác,5. Other receivables,,,,9253640.0
+TỔNG TÀI SẢN,TOTAL ASSETS,6789932748.0,7556267720.0,7405441749.0,10937061356.0
+B. NGUỒN VỐN,B. OWNER'S EQUITY ,,,,
+I. Nợ phải trả,I. Liabilities,18639445.0,6437130.0,6865575.0,9324865.0
+1. Vay ngắn hạn,1. Short-term loans,,,,
+2. Phải trả hoạt động đầu tư (kinh doanh chứng khoán),2. Payables for investment activities,12729561.0,,,
+3. Phải trả thu nhập cho Nhà đầu tư,3. Income payables for investors,,,,370895.0
+4. Phải trả phụ cấp Ban đại diện Quỹ,4. Remunerations payables to the Board of Representative,,,,
+"5. Phải trả cho Công ty quản lý Quỹ, NH giám sát",5. Payables to the fund manager and the custodian bank,,6246874.0,,8803970.0
+6. Phải trả khác,6. Other payables,5909884.0,190255.0,6865575.0,150000.0
+II. Nguồn vốn chủ sở hữu,II. Owner's equity,6771293304.0,7549830591.0,7398576174.0,10927736492.0
+1. Vốn góp của các nhà đầu tư,1. Capital contributed by investors,2851959363.0,5044214983.0,6019109324.0,6458034743.0
+1.1. Vốn góp,1.1. Capital contributed,2881000000.0,3868000000.0,4319000000.0,4235000000.0
+1.2. Thặng dư vốn,1.2. Capital surplus,-29040637.0,1176214983.0,1700109324.0,2223034743.0
+2. Kết quả hoạt động chưa phân phối,2. Undistributed earnings,3919333941.0,2505615608.0,1379466850.0,4469701748.0
+TỔNG CỘNG NGUỒN VỐN,TOTAL LIABILITIES AND OWNER'S EQUITY,6789932748.0,7556267720.0,7405441749.0,10937061356.0

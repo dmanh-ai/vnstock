@@ -1,0 +1,85 @@
+﻿item,item_en,2025,2024,2023,2022
+1. Doanh thu phí bảo hiểm (01= (01.1+01.2-01.3),1. Insurance premium (01=01.1+01.2-01.3),6653916371.0,6654892913.0,6116039912.0,5655167117.0
+- Thu phí bảo hiểm gốc,1. Gross written premium,5968140239.0,5960678727.0,5559729835.0,5398970916.0
+- Thu phí nhận tái bảo hiểm,2. Reinsurance premium assumed,805328560.0,681548141.0,637842388.0,582396268.0
+- Tăng (giảm) dự phòng phí bảo hiểm gốc và nhận tái bảo hiểm,- Increase/(Decrese) in gross unearned premium reserve,119552428.0,-12666045.0,81532311.0,326200067.0
+2. Phí nhượng tái bảo hiểm,2. Reinsurance premium ceded,1593845655.0,1775004152.0,1590539558.0,1376676671.0
+- Phí nhượng tái bảo hiểm,  - Reinsurance premium ceded,1689708423.0,1665540962.0,1638987318.0,1451944223.0
+- Tăng (giảm) dự phòng phí nhượng tái bảo hiểm,-Increase/(Decrease) in ceded unearned premium reserve,95862768.0,-109463190.0,48447760.0,75267552.0
+Các khoản giảm trừ,3. Deductions,,,,
+- Giảm phí Bảo hiểm,  - Premium deduction,,,,
+- Hoàn phí Bảo hiểm,  - Premium returns,,,,
+- Các khoản giảm trừ khác,  - Others,,,,
+"Tăng (giảm) dự phòng phí, dự phòng toán học",4. Increase (Decrease) in unearned premium reserve and technical reserve,,,,
+3. Doanh thu phí bảo hiểm thuần (03=01-02),3. Net insurance premium  (03=01-02),5060070716.0,4879888762.0,4525500354.0,4278490446.0
+4. Hoa hồng nhượng tái bảo hiểm và doanh thu khác HĐKDBH (04=04.1+04.2),4. Commission on reinsurance ceded and other insurance income (04=04.1+04.2),301095192.0,242859345.0,194961304.0,231904168.0
+- Thu hoa hồng nhượng tái Bảo hiểm,5. Commissions on reinsurance ceded,290795406.0,242025368.0,192771069.0,230506334.0
+- Thu khác hoạt động kinh doanh Bảo hiểm,6. Other income,10299786.0,833977.0,2190235.0,1397834.0
++ Thu khác nhận tái Bảo hiểm,  - Income on reinsurance assumed,,,2190235.0,
++ Thu khác nhượng tái bảo hiểm,  - Income on reinsurance ceded,,,,
+"+ Thu khác (giám định, đại lý,…)",  - Income from other activities,10299786.0,833977.0,,1397834.0
+5. Doanh thu thuần HĐKD BH (10=03+04),7. Total net revenue from insurance business ,5361165907.0,5122748106.0,4720461658.0,4510394614.0
+5.1. Doanh thuần BH và CCDV,7.1.Revenue,,,,
+6. Chi bồi thường,11. Claim expenses on retained risks,2084606468.0,1996190017.0,2156079212.0,2127818845.0
+- Tổng chi bồi thường,Total claim expenses,2097741498.0,2007040763.0,2162643984.0,2143825391.0
+"+ Chi bồi thường bảo hiểm gốc, trả tiền bảo hiểm",8. Claim and maturity payment expenses,2097741498.0,2007040763.0,2162643984.0,2143825391.0
+"+ Chi bồi thường nhận tái bảo hiểm, trả tiền bảo hiểm",9. Claim expenses for reinsurance assumed,,,,
+- Các khoản giảm trừ,10. Deductions,13135030.0,10850746.0,6564773.0,16006546.0
++ Thu đòi người thứ ba bồi hoàn,  - Subrogation recoveries,13135030.0,10850746.0,6564773.0,16006546.0
++ Thu hàng đã xử lý bồi thường 100%,  - Salvages,,,,
+7. Thu bồi thường nhượng tái bảo hiểm,  - Recoveries from reinsurance ceded,564816398.0,357809383.0,582042622.0,713001790.0
+Tăng (giảm) dự phòng toán học (dành riêng BVH),Increase(Decrease) in mathematical reserve,,,,
+8. Tăng (giảm) dự phòng bồi thường bảo hiểm gốc và nhận tái bảo hiểm,8. Increase(Decrease) in claim reserves for direct insurance and reinsurance assumed,-338878076.0,510439015.0,-381828453.0,-823686586.0
+9. Tăng (giảm) dự phòng bồi thường nhượng tái bảo hiểm,9. Increase(Decrease) in claim reserves related to reinsurance  ceded,-370053830.0,421780608.0,-377353419.0,-634171807.0
+9.1. Tăng (giảm) dự phòng bồi thường,13. Increase in claim reserve,31175754.0,88658407.0,-4475034.0,-189514779.0
+10. Tổng chi bồi thường bảo hiểm (15=11-12+13-14),Total claim insurance expenses,1550965824.0,1727039041.0,1569561555.0,1225302276.0
+11. Tăng (giảm) dự phòng dao động lớn,14. Provision for catastrophe reserve,50837604.0,-73233141.0,-14414151.0,45294230.0
+Chi bồi thường từ dự phòng dao động lớn,12. Claim expenses using catastrophe reserve,,,,
+12. Chi khác hoạt động kinh doanh bảo hiểm,15. Other insurance operating expenses,3444501808.0,3216265577.0,2908072361.0,2954126923.0
+- Chi hoa hồng bảo hiểm,   + Commission,964760126.0,915014872.0,815365941.0,796562081.0
+- Chi phí khác hoạt động kinh doanh bảo hiểm,Other insurance operating expenses,2479741683.0,2301250705.0,2092706420.0,2157564843.0
++ Chi khác hoạt động kinh doanh bảo hiểm gốc,  - Other underwriting expenses,2479741683.0,2301250705.0,2092706420.0,2157564843.0
+• Chi giám định tổn thất,   + Damage assessment expenses,,,,
+• Chi đòi người thứ 3,   + Subrogation recovery expenses,,,,
+• Chi xử lý hàng bồi thường 100%,   + Salvage expenses,,,,
+• Chi đánh giá rủi ro của đối tượng bảo hiểm,"   + Loss adjusting fee, risk assessment ",,,,
+"• Chi đề phòng hạn chế rủi ro, tổn thất",   + Risk minimization expenses,,,,
+• Chi khác,   + Others,2479741683.0,2301250705.0,2092706420.0,2157564843.0
++ Chi khác hoạt động kinh doanh nhận tái bảo hiểm,  - Other reinsurance assumed expenses,,,,
+• Chi hoa hồng nhận tái bảo hiểm,   + Commission,,,,
+• Chi đánh giá rủi ro của đối tượng bảo hiểm,"   + Loss adjusting fee, risk assessment ",,,,
+• Chi khác,   + Others,,,,
++ Chi hoạt động nhượng tái bảo hiểm,  - Other reinsurance ceded expenses,,,,
++ Chi phí trực tiếp kinh doanh hoạt động khác,  - Other direct operating expenses,,,,
+13. Tổng chi phí hoạt động kinh doanh bảo hiểm,16. Total direct insurance operating expenses ,5046305237.0,4870071478.0,4463219766.0,4224723429.0
+"13.1. Giá vốn cung cấp hàng hóa, dịch vụ khác",13.1. Cost of providing other goods and services,,,,
+14. Lợi nhuận gộp hoạt động kinh doanh bảo hiểm,17. Gross insurance operating profit ,314860670.0,252676629.0,257241892.0,285671185.0
+"14.1. Lợi nhuận gộp cung cấp hàng hóa, dịch vụ khác",14.1. Gross profit of providing other goods and services,,,,
+14.2. Lợi nhuận thuần hoạt động kinh doanh bảo hiểm,20. Profit from insurance operating  ,,,,
+15. Doanh thu kinh doanh bất động sản đầu tư,15. Revenue from properties investment,13776755.0,12962845.0,13423084.0,12829479.0
+16. Giá vốn bất động sản đầu tư,16. Cost of properties investment,5177348.0,6111283.0,5360139.0,5705391.0
+17. Lợi nhuận từ hoạt động đầu tư bất động sản (22=20-21),17. Profit from properties investment (22=20-21),8599407.0,6851562.0,8062945.0,7124088.0
+18. Doanh thu hoạt động tài chính,21. Revenue from financial activities,318397308.0,322889567.0,412096396.0,311079149.0
+19. Chi hoạt động tài chính,22. Expenses on financial activities,123649156.0,113212961.0,131934907.0,125537869.0
+- Dự phòng toán học trích lãi từ đầu tư,  - Mathematical reserve for investment profit sharing,,,,
+   - Dự phòng chia lãi,  - Dividend reserve,,,,
+   - Chi khác hoạt động tài chính,  - Others,123649156.0,113212961.0,131934907.0,125537869.0
+20. Lợi nhuận gộp hoạt động tài chính,23. Profit form financial activities,194748152.0,209676605.0,280161490.0,185541280.0
+Chi phí bán hàng,18. Selling expenses,,,,
+21. Chi phí quản lý doanh nghiệp,19. Administrative expenses,217527128.0,199049295.0,174821461.0,138622432.0
+22. Lợi nhuận thuần từ hoạt động kinh doanh,22. Operating profit,300681102.0,270155501.0,370644865.0,339714121.0
+23. Thu nhập khác,24. Other incomes,6825652.0,3941923.0,7028847.0,7205489.0
+24. Chi phí  khác,25. Other expenses,2008431.0,1363771.0,1446473.0,4180907.0
+25. Lợi nhuận khác,26. Other profits,4817221.0,2578151.0,5582374.0,3024581.0
+Phần lợi nhuận/lỗ từ công ty liên kết liên doanh,27. Share of profitin associates and joint ventures,,,,
+26. Tổng lợi nhuận kế toán trước thuế,27. Total profit ,305498323.0,272733652.0,376227239.0,342738703.0
+Các khoản điều chỉnh tăng (+) hoặc giảm (-) lợi nhuận để xác định lợi nhuận chịu thuế TNDN,28. Increasing or decreasing adjustments to define taxable profit,,,,
+Tổng lợi nhuận trước thuế thu nhập doanh nghiệp,29. Total profit before tax ,305498323.0,272733652.0,376227239.0,342738703.0
+Dự phòng đảm bảo cân đối,30. Equalization reserve,,,,
+Lợi nhuận chịu thuế thu nhập doanh nghiệp,31. Taxable profit ,305498323.0,272733652.0,376227239.0,342738703.0
+27. Chi phí thuế thu nhập hiện hành,32. Current corporate income tax expenses,47216305.0,34400136.0,45697536.0,47460639.0
+28. Chi phí thuế thu nhập hoãn lại,33. Deferred income tax expenses (*),-1504624.0,659473.0,1536818.0,4408670.0
+29. Lợi nhuận sau thuế thu nhập doanh nghiệp,34. Profit after tax  ,259786642.0,237674042.0,328992885.0,290869393.0
+30. Lợi ích của cổ đông thiểu số,35. Minority interest,,,,
+31. Lợi nhuận sau thuế của cổ đông của Công ty mẹ,36. Profit after tax for shareholders of the parent company ,259786642.0,237674042.0,328992885.0,290869393.0
+32. Lãi cơ bản trên cổ phiếu. (VNÐ),37.1 Earning per share (VND),1499.0,1564.0,2583.0,2288.0

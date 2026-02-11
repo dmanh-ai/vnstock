@@ -1,0 +1,25 @@
+﻿item,item_en,2025,2024,2023,2022
+1. Doanh thu bán hàng và cung cấp dịch vụ ,1. Revenue,843795298.0,744134539.0,562678529.0,523464065.0
+2. Các khoản giảm trừ doanh thu,2. Deduction from revenue,,,,
+3. Doanh thu thuần về bán hàng và cung cấp dịch vụ,3. Net revenue  ,843795298.0,744134539.0,562678529.0,523464065.0
+4. Giá vốn hàng bán ,4. Cost of goods sold,550318404.0,473255266.0,447866007.0,416960013.0
+5. Lợi nhuận gộp về bán hàng và cung cấp dịch vụ,5. Gross profit,293476895.0,270879273.0,114812522.0,106504052.0
+6.Doanh thu hoạt động tài chính ,6. Financial income,27311817.0,19040342.0,19579993.0,8340365.0
+7. Chi phí tài chính ,7. Financial expenses,464651.0,10590422.0,16082255.0,12520683.0
+   Trong đó :Chi phí lãi vay,    Of which: Interest expenses,340175.0,10520885.0,15939251.0,12126514.0
+"8. Phần lãi/lỗ trong công ty liên doanh, liên kết",8. Share of associates and joint ventures' result,1525061.0,-11698706.0,-6666167.0,-190132.0
+9. Chi phí bán hàng ,9. Selling expenses,9186825.0,10555087.0,8294248.0,7237485.0
+10. Chi phí quản lý doanh nghiệp ,10. General and administrative expenses,81183860.0,48127987.0,44893591.0,33105173.0
+11. Lợi nhuận thuần từ hoạt động kinh doanh,11. Operating profit ,231478437.0,208947413.0,58456255.0,61790944.0
+12. Thu nhập khác ,12. Other income,56384810.0,35708509.0,18786952.0,29321736.0
+13. Chi phí khác ,13.Other expenses,2513437.0,2828624.0,2819708.0,2438273.0
+14. Lợi nhuận khác,14. Other profit ,53871372.0,32879885.0,15967244.0,26883463.0
+Phần lợi nhuận/lỗ từ công ty liên kết liên doanh,Share of associates and joint ventures' result,,,,
+15. Tổng lợi nhuận kế toán trước thuế,15. Profit before tax,285349809.0,241827297.0,74423499.0,88674407.0
+16. Chi phí thuế TNDN hiện hành,16. Current corporate income tax expenses,25275056.0,19225301.0,6832019.0,13682922.0
+17. Chi phí thuế TNDN hoãn lại ,17. Deferred income tax expenses (*),,1317196.0,,
+18. Lợi nhuận sau thuế thu nhập doanh nghiệp,18. Net profit after tax,260074753.0,221284799.0,67591480.0,74991485.0
+Lợi ích của cổ đông thiểu số,Minority's interest,,,,
+Lợi nhuận sau thuế của cổ đông của Công ty mẹ,Profit after tax for shareholders of parent company,260074753.0,221284799.0,67591480.0,74991485.0
+19. Lãi cơ bản trên cổ phiếu (*) (VNÐ),19. Earnings per share (VND),8669.0,7598.0,2321.0,1821.0
+20. Lãi suy giảm trên cổ phiếu (*),20. Diluted earnings per share,9.0,,,2.0

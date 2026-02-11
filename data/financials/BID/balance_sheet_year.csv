@@ -1,0 +1,78 @@
+﻿item,item_en,2025,2024,2023,2022
+A. TÀI SẢN,ASSETS,,,,
+"I. Tiền mặt, vàng bạc, đá quý","I. Cash, gold and silver, precious stones",13075066000.0,10772890000.0,11029204000.0,13745228000.0
+II. Tiền gửi tại NHNN,II. Balances with the State Bank of Vietnam,123629833000.0,92341029000.0,51615657000.0,111418448000.0
+"III. Tiền, vàng gửi tại các TCTD khác và cho vay các TCTD khác",III. Placements at and loans to other credit institutions,457353626000.0,279971515000.0,211812201000.0,221177798000.0
+"1. Tiền, vàng gửi tại các TCTD khác",1. Placements at other credit institutions,443326100000.0,268366137000.0,197333127000.0,203466918000.0
+2. Cho vay các TCTD khác,2. Loans to other credit institutions,14090848000.0,11686232000.0,14564284000.0,17795874000.0
+3. Dự phòng rủi ro cho vay các TCTD khác ,3. Provisions for losses and risks,-63322000.0,-80854000.0,-85210000.0,-84994000.0
+IV. Chứng khoán kinh doanh,IV. Trading securities,30152465000.0,12734060000.0,6972474000.0,1701464000.0
+1. Chứng khoán kinh doanh ,1. Trading securities,30183812000.0,12773340000.0,7003656000.0,1748521000.0
+2. Dự phòng giảm giá chứng khoán kinh doanh ,2. Provisions for diminution in value of trading securities ,-31347000.0,-39280000.0,-31182000.0,-47057000.0
+V. Các công cụ tài chính phái sinh và các tài sản tài chính khác,V. Derivatives and other financial assets,,663256000.0,,1038214000.0
+VI. Cho vay khách hàng,"VI. Loans, advances and finance leases to customers",2338010761000.0,2018111939000.0,1737195822000.0,1484168975000.0
+1. Cho vay và cho thuê tài chính khách hàng,"1. Loans, advances and finance leases to customers",2372955112000.0,2056082420000.0,1777664882000.0,1522221714000.0
+2. Dự phòng rủi ro cho vay và cho thuê tài chính khách hàng ,"2. Provisions for losses on loans, advances and finance leases to customers ",-34944351000.0,-37970481000.0,-40469060000.0,-38052739000.0
+VII. Hoạt động mua nợ,VII. Debt purchased,,,,
+1. Mua nợ,1. Debt purchased,,,,
+2. Dự phòng rủi ro hoạt động mua nợ,2. Provision for debt purchased,,,,
+VIII. Chứng khoán đầu tư,VIII. Investment securities,285463101000.0,277838108000.0,222393123000.0,235636449000.0
+1. Chứng khoán đầu tư sẵn sàng để bán,1. Available-for-sales securities,171882436000.0,157918828000.0,127572432000.0,162283083000.0
+2. Chứng khoán đầu tư giữ đến ngày đáo hạn,2. Held to maturity securities,113629492000.0,121120044000.0,95722385000.0,73734542000.0
+3. Dự phòng giảm giá chứng khoán đầu tư ,3. Provisions for diminution in value of investment securities,-48827000.0,-1200764000.0,-901694000.0,-381176000.0
+"IX. Góp vốn, đầu tư dài hạn",IX. Capital contribution and other long-term investments,4372522000.0,3423594000.0,3113075000.0,2968160000.0
+1. Đầu tư vào công ty con,1. Investments in subsidiaries,,,,2243217000.0
+"2. Đầu tư vào công ty liên doanh, liên kết","2.  Investments in associates, joint-ventures",4293675000.0,3348512000.0,3012284000.0,628324000.0
+3. Đầu tư dài hạn khác,3. Other long-term investments,183050000.0,182914000.0,214888000.0,215076000.0
+4. Dự phòng giảm giá đầu tư dài hạn ,4. Provision for diminution in value of long-term investments ,-104203000.0,-107832000.0,-114097000.0,-118457000.0
+X. Tài sản cố định,X. Fixed assets,13123582000.0,12164849000.0,11096141000.0,10539477000.0
+1. Tài sản cố định hữu hình ,1. Tangible fixed assets,7541322000.0,6844237000.0,6401362000.0,6103314000.0
+a. Nguyên giá TSCĐ,a. Cost,17866136000.0,16745119000.0,15608346000.0,14599661000.0
+b. Hao mòn TSCĐ ,b. Accumulated depreciation,-10324814000.0,-9900882000.0,-9206984000.0,-8496347000.0
+2. Tài sản cố định thuê tài chính,2. Finance leased fixed assets,,,,
+a. Nguyên giá TSCĐ,a. Cost,,,,
+b. Hao mòn TSCĐ ,b. Accumulated depreciation,,,,
+3. Tài sản cố định vô hình,3. Intangible fixed assets,5582260000.0,5320612000.0,4694779000.0,4436163000.0
+a. Nguyên giá TSCĐ,a. Cost,8684772000.0,8103328000.0,7153285000.0,6639598000.0
+b. Hao mòn TSCĐ ,b. Accumulated depreciation,-3102512000.0,-2782716000.0,-2458506000.0,-2203435000.0
+XI. Bất động sản đầu tư,XI. Investment properties,,,,
+a. Nguyên giá BĐSĐT,a. Cost,,,,
+b. Hao mòn BĐSĐT ,b. Accumulated depreciation,,,,
+"XII. Tài sản ""Có"" khác",XII. Other assets,65722805000.0,52885724000.0,45641031000.0,38282498000.0
+1. Các khoản phải thu,1.  Accounts receivables,32942508000.0,25773422000.0,25922204000.0,22734826000.0
+"2. Các khoản lãi, phí phải thu",2. Interest and fee receivables,28238171000.0,23146980000.0,15552516000.0,12906178000.0
+3. Tài sản thuế TNDN hoãn lại,3. Deferred income tax assets,27682000.0,27056000.0,36982000.0,35542000.0
+4. Tài sản Có khác,4. Other assets,4723384000.0,4242266000.0,4451584000.0,3214895000.0
+   - Trong đó: Lợi thế thương mại,   - Of which: Goodwill,,,,
+5. Các khoản dự phòng rủi ro cho các tài sản Có nội bảng khác ,5. Provisions for risks in other assets ,-208940000.0,-304000000.0,-322255000.0,-608943000.0
+TỔNG CỘNG TÀI SẢN,TOTAL ASSETS ,3330903761000.0,2760906964000.0,2300868728000.0,2120676711000.0
+B. NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU,B. LIABILITIES AND OWNER'S EQUITY,,,,
+I. Các khoản nợ Chính phủ và NHNN,I. Due to Government and borrowings from the State Bank of Vietnam,218825525000.0,168388958000.0,35896488000.0,152752718000.0
+II. Tiền gửi và vay các TCTD khác,II. Placements and borrowings from other credit institutions,417740843000.0,232954067000.0,181830990000.0,177221298000.0
+1. Tiền gửi của các TCTD khác,1. Placements from other credit institutions,392249079000.0,205610785000.0,143569390000.0,137045455000.0
+2. Vay các TCTD khác,2. Borrowings from other credit institutions,25491764000.0,27343282000.0,38261600000.0,40175843000.0
+III. Tiền gửi của khách hàng,III. Deposits from customers,2223224542000.0,1953165486000.0,1704690185000.0,1473598150000.0
+IV. Các công cụ tài chính phái sinh và các khoản nợ tài chính khác,IV. Derivatives and other financial liabilities,230557000.0,,328155000.0,
+"V. Vốn tài trợ, ủy thác đầu tư, cho vay mà TCTD chịu rủi ro","V. Funds received from Government and institutions, investments on behalf of investors, syndicated loans of the Bank's risks",12043069000.0,11981467000.0,12207729000.0,13237626000.0
+VI. Phát hành giấy tờ có giá,"VI. Valuable papers (e.g. bonds, CDs..)",225407774000.0,198900165000.0,189486736000.0,157051601000.0
+VII. Các khoản nợ khác,VII. Other liabilities,59820146000.0,50532627000.0,53561556000.0,42697570000.0
+"1. Các khoản lãi, phí phải trả",1. Interest and fee payables,33802929000.0,28670105000.0,34433979000.0,26051633000.0
+2. Thuế TNDN hoãn lại phải trả ,2. Deferred income tax liabilities,65713000.0,79819000.0,94150000.0,97371000.0
+3. Các khoản phải trả và công nợ khác,3. Other liabilities,25951504000.0,21782703000.0,19033427000.0,16548566000.0
+4. Dự phòng rủi ro khác (Dự phòng cho công nợ tiềm ẩn và cam kết ngoại bảng),4. Provisions for contingent liabilities and off-balance sheet commitments,,,,
+TỔNG NỢ PHẢI TRẢ,TOTAL LIABILITIES,3157292456000.0,2615922770000.0,2178001839000.0,2016558963000.0
+VIII. Vốn và các quỹ,VIII. Capital and Reserves,173611305000.0,144984194000.0,122866889000.0,99394510000.0
+1. Vốn của TCTD,1. Capital,90089431000.0,84788796000.0,72711297000.0,66204497000.0
+a. Vốn điều lệ,a. Charter capital,70213619000.0,68975153000.0,57004359000.0,50585239000.0
+b. Vốn đầu tư XDCB,b. Reserves for investments in construction,,,,
+c. Thặng dư vốn cổ phần,c. Share premium,18875728000.0,15361020000.0,15361020000.0,15351407000.0
+d. Cổ phiếu quỹ ,d. Treasury shares ,,,,
+e. Cổ phiếu ưu đãi,e. Preferred stock,,,,
+g. Vốn khác,g. Other capital,1000084000.0,452623000.0,345918000.0,267851000.0
+2. Quỹ của TCTD,2. Reserves,33720959000.0,19396820000.0,15662247000.0,12447663000.0
+3. Chênh lệch tỷ giá hối đoái ,3. Foreign exchange differences ,-594215000.0,-701036000.0,-803547000.0,-760404000.0
+4. Chênh lệch đánh giá lại tài sản,4. Assets revaluation differences,,,,
+5. Lợi nhuận chưa phân phối/Lỗ lũy kế ,5. Undistributed earnings after tax/Accumulated loss ,44829192000.0,36264506000.0,30330738000.0,21502754000.0
+6. Lợi ích cổ đông không kiểm soát,6. Minority's interest,5565938000.0,5235108000.0,4966154000.0,4723238000.0
+IX. Lợi ích của cổ đông thiểu số,IX. Minority interest,,,,4723238000.0
+TỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU,TOTAL LIABILITIES AND OWNER'S EQUITY,3330903761000.0,2760906964000.0,2300868728000.0,2120676711000.0

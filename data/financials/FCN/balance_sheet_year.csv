@@ -1,0 +1,125 @@
+﻿item,item_en,2025,2024,2023,2022
+TÀI SẢN ,ASSETS,,,,
+A. TÀI SẢN NGẮN HẠN,A. SHORT-TERM ASSETS,8204118169.0,6369718314.0,6136596079.0,5235382975.0
+I. Tiền và các khoản tương đương tiền,I. Cash and cash equivalents,767059133.0,472986710.0,701731892.0,174638758.0
+1. Tiền,1. Cash,554041677.0,384628939.0,542225988.0,112906624.0
+2. Các khoản tương đương tiền,2. Cash equivalents,213017456.0,88357771.0,159505904.0,61732135.0
+II.  Đầu tư tài chính ngắn hạn,II.  Short-term financial investments,25993590.0,28079803.0,24655423.0,28560627.0
+1. Chứng khoán kinh doanh,1. Available for sale securities,,,,
+2. Dự phòng giảm giá chứng khoán kinh doanh (*),2. Provision for diminution in value of available for sale securities (*),,,,
+3. Đầu tư nắm giữ đến ngày đáo hạn,3. Held to maturity investments,25993590.0,28079803.0,24655423.0,28560627.0
+III. Các khoản phải thu ngắn hạn,III. Short-term receivables,3797710032.0,4076944200.0,3632110731.0,3229997091.0
+1. Phải thu ngắn hạn của khách hàng,1. Short-term trade accounts receivable,2303556370.0,2080976643.0,1889554795.0,1981715704.0
+2. Trả trước cho người bán ngắn hạn,2. Short-term prepayments to suppliers  ,886598974.0,835605821.0,692867910.0,235619508.0
+3. Phải thu nội bộ ngắn hạn,3. Short-term inter-company receivables,,,,
+4. Phải thu theo tiến độ kế hoạch hợp đồng xây dựng,4. Construction contract progress receipts due from customers,,,,
+5. Phải thu về cho vay ngắn hạn,5. Short-term loan receivables,19860624.0,9084060.0,8284060.0,37095020.0
+6. Phải thu ngắn hạn khác,6. Other short-term receivables ,595912632.0,1154130267.0,1044034676.0,978197569.0
+7. Dự phòng phải thu ngắn hạn khó đòi (*),7. Provision for short-term doubtful debts (*),-9465968.0,-4099990.0,-3878110.0,-3878110.0
+8. Tài sản thiếu chờ xử lý,8. Assets awaiting resolution,1247399.0,1247399.0,1247399.0,1247399.0
+IV. Hàng tồn kho,IV. Inventories,3486923509.0,1682936437.0,1680601635.0,1669258656.0
+1. Hàng tồn kho,1. Inventories,3486923509.0,1682936437.0,1680601635.0,1669258656.0
+2. Dự phòng giảm giá hàng tồn kho (*),2. Provision for decline in value of inventories ,,,,
+V. Tài sản ngắn hạn khác,V. Other short-term assets,126431906.0,108771164.0,97496400.0,132927843.0
+1. Chi phí trả trước ngắn hạn,1. Short-term prepayments,37767110.0,60107672.0,45923029.0,42412552.0
+2. Thuế GTGT được khấu trừ,2. Value added tax to be reclaimed,64857790.0,34875084.0,50414495.0,85175473.0
+3. Thuế và các khoản khác phải thu của nhà nước,3. Taxes and other receivables from state authorities,23807006.0,13788408.0,1158876.0,5339818.0
+4. Giao dịch mua bán lại trái phiếu chính phủ,4. Government bonds,,,,
+5. Tài sản ngắn hạn khác,5. Other short-term assets,,,,
+B. TÀI SẢN DÀI HẠN,B. LONG-TERM ASSETS ,1983322302.0,3336343646.0,2444854549.0,2345591035.0
+I. Các khoản phải thu dài hạn,I. Long-term receivables,83402329.0,121193462.0,120155328.0,127242159.0
+1. Phải thu dài hạn của khách hàng,1. Long-term trade receivables,,,,2602610.0
+2. Trả trước cho người bán dài hạn,2. Long-term prepayments to suppliers  ,,,,
+3. Vốn kinh doanh ở các đơn vị trực thuộc,3. Capital at inter-company,,,,
+4.  Phải thu nội bộ dài hạn ,4. Long-term inter-company receivables,,,,
+5. Phải thu về cho vay dài hạn,5. Long-term loan receivables,23300000.0,99534467.0,99534467.0,99534467.0
+6. Phải thu dài hạn khác,6. Other long-term receivables,60102329.0,21658995.0,20620861.0,25105082.0
+7. Dự phòng phải thu dài hạn khó đòi (*),7. Provision for long-term doubtful debts,,,,
+II. Tài sản cố định,II. Fixed assets,551894455.0,1581842339.0,1716276085.0,1796666791.0
+1. Tài sản cố định hữu hình,1. Tangible fixed assets,256942753.0,1373431637.0,1543790737.0,1552750681.0
+      - Nguyên giá,    - Cost,794210449.0,2094419807.0,2178786545.0,2021088456.0
+      - Giá trị hao mòn lũy kế (*),    - Accumulated depreciation,-537267696.0,-720988170.0,-634995808.0,-468337776.0
+2. Tài sản cố định thuê tài chính,2. Financial leased fixed assets,277755213.0,186557447.0,147226189.0,214376785.0
+      - Nguyên giá,    - Cost,323011402.0,228700164.0,196098527.0,259091987.0
+      - Giá trị hao mòn lũy kế (*),    - Accumulated depreciation,-45256189.0,-42142717.0,-48872338.0,-44715202.0
+3. Tài sản cố định vô hình,3. Intangible fixed assets,17196489.0,21853255.0,25259159.0,29539325.0
+      - Nguyên giá,    - Cost,61047805.0,60096305.0,58030439.0,56938439.0
+      - Giá trị hao mòn lũy kế (*),    - Accumulated depreciation,-43851315.0,-38243050.0,-32771279.0,-27399114.0
+III. Bất động sản đầu tư,III. Investment properties,,,,
+      - Nguyên giá,    - Cost,,,,
+      - Giá trị hao mòn lũy kế (*),    - Accumulated depreciation,,,,
+IV. Tài sản dở dang dài hạn,IV. Long-term assets in progress,529841887.0,1032114109.0,54852362.0,36931510.0
+"1. Chi phí sản xuất, kinh doanh dở dang dài hạn",1. Long-term production in progress,,994808849.0,24148330.0,9265435.0
+2. Chi phí xây dựng cơ bản dở dang,2. Construction in progress,529841887.0,37305260.0,30704032.0,27666075.0
+V. Đầu tư tài chính dài hạn,V. Long-term financial investments,651872889.0,452503584.0,414211406.0,222086445.0
+1. Đầu tư vào công ty con,1. Investments in subsidiaries,,,,
+2. Đầu tư vào công ty liên kết. liên doanh,"2. Investments in associates, joint-ventures",566337961.0,368242619.0,329176403.0,157141403.0
+3. Đầu tư góp vốn vào đơn vị khác,3. Investments in other entities,82010027.0,80810027.0,80810027.0,60810027.0
+4. Dự phòng đầu tư tài chính dài hạn (*),4. Provision for diminution in value of long-term investments,,,,
+5. Đầu tư nắm giữ đến ngày đáo hạn,5. Held to maturity investments,3524901.0,3450938.0,4224975.0,4135014.0
+6. Đầu tư dài hạn khác,6. Other long-term investments,,,,
+VI. Tài sản dài hạn khác,VI. Other long-term assets,166310740.0,148690152.0,139359367.0,162664132.0
+1. Chi phí trả trước dài hạn,1. Long-term prepayments,140940009.0,107592284.0,90304495.0,106013440.0
+2. Tài sản thuế thu nhập hoãn lại,2. Deferred income tax assets,24649219.0,3013714.0,1696474.0,1792709.0
+"3. Thiết bị, vật tư, phụ tùng thay thế dài hạn","3. Long-term equipment, supplies, spare parts",,,,
+4. Tài sản dài hạn khác,4. Other long-term assets,,,,
+5. Lợi thế thương mại,5. Goodwill,721512.0,38084155.0,47358398.0,54857983.0
+VII. Lợi thế thương mại (áp dụng trước năm 2015),VII. Goodwill (before 2015),,,,
+TỔNG CỘNG TÀI SẢN,TOTAL ASSETS,10187440470.0,9706061960.0,8581450628.0,7580974010.0
+NGUỒN VỐN,OWNER'S EQUITY,,,,
+A. NỢ PHẢI TRẢ,A.  LIABILITIES ,6882576760.0,6338037721.0,5219658470.0,4097649577.0
+I. Nợ ngắn hạn,I. Short -term liabilities,5497471060.0,4808696076.0,4319113180.0,3152094491.0
+1. Phải trả người bán ngắn hạn,1.  Short-term trade accounts payable,951653575.0,809023344.0,873889743.0,709797462.0
+2. Người mua trả tiền trước ngắn hạn,2. Short-term advances from customers,1299044711.0,722292929.0,986763841.0,286769356.0
+3. Thuế và các khoản phải nộp Nhà nước,3. Taxes and other payables to state authorities,99105276.0,361017163.0,58362689.0,58874060.0
+4. Phải trả người lao động,4. Payable to employees,56880198.0,39297989.0,35342030.0,40425060.0
+5. Chi phí phải trả ngắn hạn,5. Short-term acrrued expenses,184349408.0,359497220.0,169715341.0,158394892.0
+6. Phải trả nội bộ ngắn hạn,6. Short-term inter-company payables,,,,
+7. Phải trả theo tiến độ kế hoạch hợp đồng xây dựng,7. Construction contract progress payments due to suppliers,,,,
+8. Doanh thu chưa thực hiện ngắn hạn,8. Short-term unearned revenue,145743.0,,,17595.0
+9. Phải trả ngắn hạn khác,9. Other short-term payables,178023083.0,128039419.0,119270213.0,123266048.0
+10. Vay và nợ thuê tài chính ngắn hạn,10. Short-term borrowings and financial leases,2720401846.0,2380916620.0,2066715368.0,1766741053.0
+11. Dự phòng phải trả ngắn hạn,11. Provision for short-term liabilities,,,,
+"12. Quỹ khen thưởng, phúc lợi",12.. Bonus and welfare fund,7867221.0,8611393.0,9053955.0,7808965.0
+13. Quỹ bình ổn giá,13. Price stabilization fund,,,,
+14. Giao dịch mua bán lại trái phiếu Chính phủ,14. Government bonds,,,,
+II. Nợ dài hạn ,II. Long-term liabilities,1385105700.0,1529341645.0,900545290.0,945555086.0
+1. Phải trả người bán dài hạn,1. Long-term trade payables,16589461.0,14053978.0,18651421.0,
+2. Người mua trả tiền trước dài hạn,2. Long-term advances from customers,,,,
+3. Chi phí phải trả dài hạn,3. Long-term acrrued expenses,,,,
+4. Phải trả nội bộ về vốn kinh doanh,4. Inter-company payables on business capital,,,,
+5. Phải trả nội bộ dài hạn,5. Long-term inter-company payables,,,,
+6. Doanh thu chưa thực hiện dài hạn,6. Long-term unearned revenue,3418990.0,4601780.0,2972316.0,4286663.0
+7. Phải trả dài hạn khác,7. Other long-term liabilities,,,,
+8. Vay và nợ thuê tài chính dài hạn,8. Long-term borrowings and financial leases,1365076465.0,1510667103.0,878921553.0,941268423.0
+9. Trái phiếu chuyển đổi,9. Convertible bonds,,,,
+10. Cổ phiếu ưu đãi (Nợ),10. Preferred stock (Debts),,,,
+11. Thuế thu nhập hoãn lại phải trả,11. Deferred income tax liabilities,20784.0,18784.0,,
+12. Dự phòng phải trả dài hạn,12. Provision for long-term liabilities,,,,
+13. Quỹ phát triển khoa học và công nghệ,13. Fund for technology development,,,,
+14. Dự phòng trợ cấp mất việc làm,14. Provision for severance allowances,,,,
+B. VỐN CHỦ SỞ HỮU,B. OWNER'S EQUITY ,3304863711.0,3368024239.0,3361792158.0,3483324433.0
+I. Vốn chủ sở hữu,I. Owner's equity,3304863711.0,3368024239.0,3361792158.0,3483324433.0
+1. Vốn góp của chủ sở hữu,1. Owner's capital ,1574390050.0,1574390050.0,1574390050.0,1574390050.0
+- Cổ phiếu phổ thông có quyền biểu quyết,- Common stock with voting right,1574390050.0,1574390050.0,1574390050.0,1574390050.0
+- Cổ phiếu ưu đãi,- Preferred stock,,,,
+2. Thặng dư vốn cổ phần,2. Share premium,517556564.0,517556564.0,517556564.0,517556564.0
+3. Quyền chọn chuyển đổi trái phiếu,3. Convertible bond option,,,,
+4. Vốn khác của chủ sở hữu,4. Other capital of owners,10039280.0,10039280.0,10039280.0,10039280.0
+5. Cổ phiếu quỹ (*),5. Treasury shares,,,,
+6. Chênh lệch đánh giá lại tài sản,6. Assets revaluation differences,,,,
+7. Chênh lệch tỷ giá hối đoái,7. Foreign exchange differences,,,8387.0,
+8. Quỹ đầu tư phát triển,8. Investment and development fund,348762011.0,348553075.0,347341875.0,337163604.0
+9. Quỹ hỗ trợ sắp xếp doanh nghiệp,9. Fund to support corporate restructuring,,,,
+10. Quỹ khác thuộc vốn chủ sở hữu,10. Other funds from owner's equity,232406.0,232406.0,232406.0,263830.0
+11. Lợi nhuận sau thuế chưa phân phối,11. Undistributed earnings after tax,79706540.0,56538790.0,51175949.0,207271474.0
+- LNST chưa phân phối lũy kế đến cuối kỳ trước,- Accumulated retained earning at the end of the previous period,47362499.0,47269781.0,83272266.0,167662439.0
+- LNST chưa phân phối kỳ này,- Undistributed earnings in this period,32344041.0,9269009.0,-32096317.0,39609035.0
+12. Nguồn vốn đầu tư XDCB,12. Reserves for investment in construction,,,,
+13. Lợi ích cổ đông không kiểm soát,13. Minority's interest,774176859.0,860714073.0,861047647.0,836639630.0
+14. Quỹ dự phòng tài chính,14. Financial reserves,,,,
+II. Nguồn kinh phí và quỹ khác,II. Other resources and funds ,,,,
+1. Nguồn kinh phí,1. Subsidized not-for-profit funds,,,,
+2. Nguồn kinh phí đã hình thành TSCĐ,2. Funds invested in fixed assets,,,,
+C. LỢI ÍCH CỔ ĐÔNG THIỂU SỐ,C. MINORITY'S INTEREST,,,,
+TỔNG CỘNG NGUỒN VỐN,TOTAL OWNER'S EQUITY AND LIABILITIES ,10187440470.0,9706061960.0,8581450628.0,7580974010.0

@@ -1,0 +1,25 @@
+﻿item,item_en,2025,2024,2023,2022
+1. Thu nhập lãi và các khoản thu nhập tương tự,1. Interest income and similar income,5501970000.0,4276780000.0,3993619000.0,2666756000.0
+2. Chi phí lãi và các chi phí tương tự,2. Interest expense and similar expenses,3610229000.0,2832445000.0,3284594000.0,1747554000.0
+I. Thu nhập lãi thuần,I. Net interest income ,1891741000.0,1444335000.0,709025000.0,919202000.0
+3. Thu nhập từ hoạt động dịch vụ,3. Fee and commission income,65217000.0,74791000.0,53319000.0,130443000.0
+4. Chi phí hoạt động dịch vụ,4. Fee and commission expenses,17564000.0,34532000.0,50096000.0,114354000.0
+II. Lãi/lỗ thuần từ hoạt động dịch vụ,II. Net fee and commission income ,47653000.0,40259000.0,3223000.0,16089000.0
+III. Lãi/lỗ thuần từ hoạt động kinh doanh ngoại hối và vàng,III. Net gain/(loss) from foreign currencies and gold trading,-49224000.0,-43142000.0,-86500000.0,-38740000.0
+IV. Lãi/lỗ thuần từ mua bán chứng khoán kinh doanh,IV. Net gain/(loss) from trading securities,19400000.0,15217000.0,,
+V. Lãi/lỗ thuần từ mua bán chứng khoán đầu tư,V. Net gain/(loss) from investment securities,170772000.0,-49746000.0,315721000.0,-78518000.0
+5. Thu nhập từ hoạt động khác,5. Other income,88302000.0,80311000.0,50424000.0,294918000.0
+6. Chi phí hoạt động khác,6. Other expenses,2236000.0,560000.0,465000.0,71484000.0
+VI. Lãi/lỗ thuần từ hoạt động khác,VI. Net other income ,86066000.0,79751000.0,49959000.0,223434000.0
+"VII. Thu nhập từ góp vốn, mua cổ phần",VII. Income from capital contribution and long-term investments,47166000.0,15411000.0,102255000.0,102599000.0
+VIII. Chi phí hoạt động,VIII. Operating expenses,280526000.0,153005000.0,297004000.0,327238000.0
+IX. Lợi nhuận thuần từ hoạt động kinh doanh trước chi phí dự phòng rủi ro tín dụng (I+II+III+IV+V+VI+VII-VIII),IX. Operating profit before provision for credit losses,1933048000.0,1349080000.0,796679000.0,816828000.0
+X. Chi phí dự phòng rủi ro tín dụng,X. Provision for credit losses,828823000.0,645306000.0,387372000.0,361482000.0
+XI. Tổng lợi nhuận trước thuế (IX-X),XI. Profit before tax ,1104225000.0,703774000.0,409307000.0,455346000.0
+7. Chi phí thuế TNDN hiện hành,7. Current corporate income tax expenses,209888000.0,142952000.0,80928000.0,89559000.0
+8. Chi phí thuế TNDN hoãn lại,8. Deferred income tax expenses (*),,,,
+XII. Chi phí thuế TNDN,XII. Corporate income tax ,209888000.0,142952000.0,80928000.0,89559000.0
+XIII. Lợi nhuận sau thuế (XI-XII),XIII. Net profit after tax,894337000.0,560822000.0,328379000.0,365787000.0
+XIV. Lợi ích của cổ đông thiểu số,XIV. Minority interest,,,,
+XV. Lợi nhuận sau thuế của cổ đông của Ngân hàng mẹ (XIII-XIV),XV. Net profit atttributable to the equity holders of the Bank ,894337000.0,560822000.0,328379000.0,365787000.0
+Lãi cơ bản trên cổ phiếu (BCTC) (VNÐ),Earning per share (VND),1123.0,704.0,849.0,995.0

@@ -1,0 +1,25 @@
+﻿item,item_en,2025,2024,2023,2022
+1. Doanh thu bán hàng và cung cấp dịch vụ ,1. Revenue,726464029.0,752328702.0,696760758.0,1003926877.0
+2. Các khoản giảm trừ doanh thu,2. Deduction from revenue,,,,
+3. Doanh thu thuần về bán hàng và cung cấp dịch vụ,3. Net revenue  ,726464029.0,752328702.0,696760758.0,1003926877.0
+4. Giá vốn hàng bán ,4. Cost of goods sold,350537060.0,349801346.0,297211612.0,333645622.0
+5. Lợi nhuận gộp về bán hàng và cung cấp dịch vụ,5. Gross profit,375926969.0,402527356.0,399549146.0,670281255.0
+6.Doanh thu hoạt động tài chính ,6. Financial income,16474441.0,7843083.0,36065657.0,23606088.0
+7. Chi phí tài chính ,7. Financial expenses,,,,3851779.0
+   Trong đó :Chi phí lãi vay,    Of which: Interest expenses,,,,3851779.0
+"8. Phần lãi/lỗ trong công ty liên doanh, liên kết",8. Share of associates and joint ventures' result,,,,
+9. Chi phí bán hàng ,9. Selling expenses,,,,
+10. Chi phí quản lý doanh nghiệp ,10. General and administrative expenses,44102663.0,43376302.0,50319889.0,50279475.0
+11. Lợi nhuận thuần từ hoạt động kinh doanh,11. Operating profit ,348298746.0,366994137.0,385294914.0,639756088.0
+12. Thu nhập khác ,12. Other income,733806.0,4056085.0,696224.0,1893501.0
+13. Chi phí khác ,13.Other expenses,106739.0,583528.0,49042.0,4257190.0
+14. Lợi nhuận khác,14. Other profit ,627068.0,3472558.0,647182.0,-2363689.0
+Phần lợi nhuận/lỗ từ công ty liên kết liên doanh,Share of associates and joint ventures' result,,,,
+15. Tổng lợi nhuận kế toán trước thuế,15. Profit before tax,348925814.0,370466695.0,385942096.0,637392399.0
+16. Chi phí thuế TNDN hiện hành,16. Current corporate income tax expenses,68251529.0,73252428.0,39448041.0,65675294.0
+17. Chi phí thuế TNDN hoãn lại ,17. Deferred income tax expenses (*),,,,
+18. Lợi nhuận sau thuế thu nhập doanh nghiệp,18. Net profit after tax,280674285.0,297214267.0,346494055.0,571717106.0
+Lợi ích của cổ đông thiểu số,Minority's interest,,,,
+Lợi nhuận sau thuế của cổ đông của Công ty mẹ,Profit after tax for shareholders of parent company,280674285.0,297214267.0,346494055.0,571717106.0
+19. Lãi cơ bản trên cổ phiếu (*) (VNÐ),19. Earnings per share (VND),,3960.0,4617.0,7618.0
+20. Lãi suy giảm trên cổ phiếu (*),20. Diluted earnings per share,,4.0,,
