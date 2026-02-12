@@ -31,7 +31,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import pandas as pd
-from utils import init_rate_limiter
+from utils import init_rate_limiter, is_file_fresh
 
 # ============================================================
 # CẤU HÌNH
@@ -89,6 +89,12 @@ def collect_macro(only: list = None):
     for method_name in methods:
         csv_path = DATA_DIR / f"{method_name}.csv"
 
+        # Skip nếu file đã được cập nhật hôm nay
+        if is_file_fresh(csv_path):
+            logger.info(f"  {method_name}: đã có hôm nay, bỏ qua.")
+            success += 1
+            continue
+
         try:
             method = getattr(macro, method_name, None)
             if method is None:
@@ -100,6 +106,23 @@ def collect_macro(only: list = None):
             df = method()
 
             if df is not None and not df.empty:
+                # Incremental merge: nối với dữ liệu cũ, loại trùng
+                if csv_path.exists():
+                    try:
+                        existing = pd.read_csv(csv_path)
+                        date_col = None
+                        for col in ['date', 'time', 'Date', 'Time', 'period', 'year']:
+                            if col in df.columns:
+                                date_col = col
+                                break
+                        if date_col:
+                            df = pd.concat([existing, df], ignore_index=True)
+                            df = df.drop_duplicates(subset=[date_col], keep="last")
+                            df = df.sort_values(date_col).reset_index(drop=True)
+                            logger.info(f"  {method_name}: merged ({len(df)} rows total)")
+                    except Exception:
+                        pass
+
                 df.to_csv(csv_path, index=False, encoding="utf-8-sig")
                 logger.info(f"  {method_name}: {len(df)} rows → {csv_path.name}")
                 success += 1

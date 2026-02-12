@@ -35,7 +35,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 sys.path.insert(0, str(PROJECT_ROOT))
 
 import pandas as pd
-from utils import init_rate_limiter, get_limiter
+from utils import init_rate_limiter, get_limiter, is_file_fresh
 
 # ============================================================
 # CẤU HÌNH
@@ -378,12 +378,20 @@ def collect_world_indices(start: str, end: str):
 # ============================================================
 
 def collect_fund_data():
-    """Thu thập danh sách quỹ mở + NAV từ FMARKET."""
+    """Thu thập danh sách quỹ mở + NAV từ FMARKET. Bỏ qua nếu đã có hôm nay."""
     logger.info("Đang lấy dữ liệu quỹ mở từ FMARKET...")
-    from vnstock.common.client import Vnstock
 
     fund_dir = DATA_DIR / "funds"
     fund_dir.mkdir(parents=True, exist_ok=True)
+
+    # Skip nếu tất cả file fund đã fresh
+    fund_files = ["fund_listing.csv", "fund_nav.csv", "fund_holdings.csv",
+                  "fund_industry_holding.csv", "fund_asset_holding.csv"]
+    if all(is_file_fresh(fund_dir / f) for f in fund_files):
+        logger.info("  Tất cả file fund đã có hôm nay, bỏ qua.")
+        return True
+
+    from vnstock.common.client import Vnstock
 
     success = 0
 
@@ -503,12 +511,19 @@ def collect_fund_data():
 # ============================================================
 
 def collect_listing_metadata():
-    """Thu thập metadata: industries, bonds, warrants, futures."""
+    """Thu thập metadata: industries, bonds, warrants, futures. Bỏ qua nếu đã có hôm nay."""
     logger.info("Đang lấy listing metadata từ KBS...")
-    from vnstock.common.client import Vnstock
 
     meta_dir = DATA_DIR / "metadata"
     meta_dir.mkdir(parents=True, exist_ok=True)
+
+    # Metadata ít thay đổi, skip nếu file đã fresh
+    meta_files = ["industries_icb.csv", "etf_listing.csv", "futures.csv"]
+    if all(is_file_fresh(meta_dir / f) for f in meta_files):
+        logger.info("  Metadata đã có hôm nay, bỏ qua.")
+        return True
+
+    from vnstock.common.client import Vnstock
 
     success = 0
 
