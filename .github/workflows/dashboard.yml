@@ -160,7 +160,7 @@ jobs:
           VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
 
       # ========== PHẦN 1: THU THẬP DỮ LIỆU CỔ PHIẾU ==========
-      - name: "[1/8] Thu thập dữ liệu cổ phiếu"
+      - name: "[1/11] Thu thập dữ liệu cổ phiếu"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
@@ -170,7 +170,7 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 2: THU THẬP OHLCV TOP 500 CỔ PHIẾU ==========
-      - name: "[2/8] Thu thập OHLCV top 500 cổ phiếu vốn hóa"
+      - name: "[2/11] Thu thập OHLCV top 500 cổ phiếu vốn hóa"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
@@ -180,7 +180,7 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 3: THU THẬP DỮ LIỆU CHỈ SỐ ==========
-      - name: "[3/8] Thu thập 18 chỉ số thị trường + charts"
+      - name: "[3/11] Thu thập 18 chỉ số thị trường + charts"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
@@ -198,7 +198,7 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 4: GIÁ VÀNG + TỶ GIÁ + COMPANY DATA ==========
-      - name: "[4/8] Thu thập giá vàng, tỷ giá, company data, events, insider"
+      - name: "[4/11] Thu thập giá vàng, tỷ giá, company data, events, insider"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
@@ -208,7 +208,7 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 5: FX + CRYPTO + WORLD INDICES + FUND ==========
-      - name: "[5/8] Thu thập FX, Crypto, World Indices, Fund, Listing"
+      - name: "[5/11] Thu thập FX, Crypto, World Indices, Fund, Listing"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
@@ -218,7 +218,7 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 6: GIÁ HÀNG HÓA (vnstock_data) ==========
-      - name: "[6/8] Thu thập giá hàng hóa (CommodityPrice)"
+      - name: "[6/11] Thu thập giá hàng hóa (CommodityPrice)"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
@@ -228,7 +228,7 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 7: DỮ LIỆU VĨ MÔ (vnstock_data) ==========
-      - name: "[7/8] Thu thập dữ liệu vĩ mô (Macro)"
+      - name: "[7/11] Thu thập dữ liệu vĩ mô (Macro)"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
@@ -237,12 +237,41 @@ jobs:
           VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
           VNSTOCK_RATE_LIMIT: '500'
 
-      # ========== PHẦN 8: MARKET INSIGHTS (vnstock_data) ==========
-      - name: "[8/8] Thu thập thống kê thị trường (Market Insights)"
+      # ========== PHẦN 8: MARKET INSIGHTS (vnstock_data Market + TopStock) ==========
+      - name: "[8/11] Thu thập thống kê thị trường (Market Insights)"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
           python scripts/collect_insights.py
+        env:
+          VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
+          VNSTOCK_RATE_LIMIT: '500'
+
+      # ========== PHẦN 9: TIN TỨC TÀI CHÍNH (vnstock_news) ==========
+      - name: "[9/11] Thu thập tin tức tài chính (vnstock_news)"
+        if: steps.check_day.outputs.skip != 'true'
+        continue-on-error: true
+        run: |
+          python scripts/collect_news.py --limit 50
+        env:
+          VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
+
+      # ========== PHẦN 10: CHỈ BÁO KỸ THUẬT (vnstock_ta) ==========
+      - name: "[10/11] Tính chỉ báo kỹ thuật (vnstock_ta)"
+        if: steps.check_day.outputs.skip != 'true'
+        continue-on-error: true
+        run: |
+          python scripts/collect_ta.py
+        env:
+          VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
+          VNSTOCK_RATE_LIMIT: '500'
+
+      # ========== PHẦN 11: PIPELINE SONG SONG (vnstock_pipeline) ==========
+      - name: "[11/11] Pipeline tải OHLCV song song (vnstock_pipeline)"
+        if: steps.check_day.outputs.skip != 'true'
+        continue-on-error: true
+        run: |
+          python scripts/collect_pipeline.py --only ohlcv --top-n 200 --max-workers 2
         env:
           VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
           VNSTOCK_RATE_LIMIT: '500'
@@ -307,6 +336,27 @@ jobs:
           echo "  MARKET INSIGHTS (vnstock_data)"
           echo "=========================================="
           ls -lh data/insights/*.csv 2>/dev/null || echo "No insights files"
+          echo ""
+          echo "=========================================="
+          echo "  TIN TỨC TÀI CHÍNH (vnstock_news)"
+          echo "=========================================="
+          if [ -d "data/news/$(TZ=Asia/Ho_Chi_Minh date +%Y-%m-%d)" ]; then
+            ls -lh data/news/$(TZ=Asia/Ho_Chi_Minh date +%Y-%m-%d)/*.csv 2>/dev/null | wc -l | xargs -I{} echo "{} news files"
+          fi
+          ls -lh data/news/trending.csv 2>/dev/null || echo "No trending file"
+          echo ""
+          echo "=========================================="
+          echo "  CHỈ BÁO KỸ THUẬT (vnstock_ta)"
+          echo "=========================================="
+          ls data/ta/indices/*.csv 2>/dev/null | wc -l | xargs -I{} echo "Indices: {} files"
+          ls data/ta/stocks/*.csv 2>/dev/null | wc -l | xargs -I{} echo "Stocks: {} files"
+          ls -lh data/ta/signals.csv 2>/dev/null || echo "No signals file"
+          echo ""
+          echo "=========================================="
+          echo "  PIPELINE (vnstock_pipeline)"
+          echo "=========================================="
+          ls data/pipeline/ohlcv/*.csv 2>/dev/null | wc -l | xargs -I{} echo "OHLCV: {} files"
+          ls data/pipeline/financials/*.csv 2>/dev/null | wc -l | xargs -I{} echo "Financials: {} files"
 
       # ========== COMMIT & PUSH ==========
       - name: Commit and push all data
