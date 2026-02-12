@@ -36,7 +36,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 sys.path.insert(0, str(PROJECT_ROOT))
 
 import pandas as pd
-from utils import init_rate_limiter, get_limiter
+from utils import init_rate_limiter, get_limiter, is_file_fresh
 
 # ============================================================
 # CẤU HÌNH
@@ -220,8 +220,14 @@ def _fetch_overview_one(symbol: str):
 def collect_company_overview(top_n: int = 200):
     """
     Thu thập thông tin tổng quan công ty cho top N mã (song song).
-    Lưu snapshot (overwrite mỗi ngày).
+    Lưu snapshot (overwrite mỗi ngày). Bỏ qua nếu đã có dữ liệu hôm nay.
     """
+    csv_overview = DATA_DIR / "company_overview.csv"
+    csv_ratios = DATA_DIR / "company_ratios.csv"
+    if is_file_fresh(csv_overview) and is_file_fresh(csv_ratios):
+        logger.info(f"  company_overview.csv + company_ratios.csv đã có hôm nay, bỏ qua.")
+        return True
+
     logger.info(f"Đang lấy company overview cho top {top_n} mã ({MAX_WORKERS} threads)...")
 
     from vnstock.common.client import Vnstock
@@ -286,7 +292,12 @@ def _collect_company_data_concurrent(
     """
     Generic concurrent fetcher for company data.
     fetch_func(symbol) → DataFrame or None
+    Bỏ qua nếu CSV đã được cập nhật hôm nay.
     """
+    if is_file_fresh(csv_path):
+        logger.info(f"  {csv_path.name} đã có hôm nay, bỏ qua {label}.")
+        return True
+
     top_n = len(symbols)
     logger.info(f"Đang lấy {label} cho {top_n} mã ({MAX_WORKERS} threads)...")
 

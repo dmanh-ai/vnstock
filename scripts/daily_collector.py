@@ -44,7 +44,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import pandas as pd
-from utils import init_rate_limiter, get_limiter
+from utils import init_rate_limiter, get_limiter, is_file_fresh
 
 # ============================================================
 # CẤU HÌNH
@@ -557,6 +557,7 @@ def update_latest_symlink(date_dir: Path):
 def collect_daily_data(date_str: str, source: str = DEFAULT_SOURCE, skip_ohlcv_history: bool = False):
     """
     Thu thập toàn bộ dữ liệu cho một ngày.
+    Bỏ qua nếu thư mục ngày đã có đủ dữ liệu.
 
     Args:
         date_str: Ngày thu thập (YYYY-MM-DD)
@@ -571,6 +572,17 @@ def collect_daily_data(date_str: str, source: str = DEFAULT_SOURCE, skip_ohlcv_h
     # Tạo thư mục
     date_dir = DATA_DIR / date_str
     date_dir.mkdir(parents=True, exist_ok=True)
+
+    # Skip nếu đã có đủ dữ liệu cho ngày này
+    expected_files = [
+        "top_gainers.csv", "top_losers.csv", "market_breadth.csv",
+        "foreign_flow.csv", "foreign_top_buy.csv", "foreign_top_sell.csv",
+        "index_impact_positive.csv", "index_impact_negative.csv",
+    ]
+    if all(is_file_fresh(date_dir / f) for f in expected_files):
+        logger.info(f"Ngày {date_str} đã có đủ {len(expected_files)} files, bỏ qua.")
+        update_latest_symlink(date_dir)
+        return
 
     setup_file_logging(date_str)
 

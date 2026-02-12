@@ -30,7 +30,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import pandas as pd
-from utils import init_rate_limiter
+from utils import init_rate_limiter, is_file_fresh
 
 # ============================================================
 # CẤU HÌNH
@@ -90,6 +90,12 @@ def collect_insights(only: list = None):
 
     for method_name in methods:
         csv_path = DATA_DIR / f"market_{method_name}.csv"
+
+        # Skip nếu file đã được cập nhật hôm nay
+        if is_file_fresh(csv_path):
+            logger.info(f"  {method_name}: đã có hôm nay, bỏ qua.")
+            success += 1
+            continue
 
         try:
             method = getattr(trading, method_name, None)

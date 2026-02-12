@@ -18,8 +18,34 @@ Environment variables:
 import os
 import time
 import logging
+from pathlib import Path
 
 logger = logging.getLogger("utils")
+
+# ============================================================
+# FRESHNESS CHECK
+# ============================================================
+
+def is_file_fresh(csv_path, max_age_hours: int = 20) -> bool:
+    """
+    Check if a CSV file was modified recently (within max_age_hours).
+    Used to skip re-fetching data that was already collected today.
+
+    Args:
+        csv_path: Path to the CSV file.
+        max_age_hours: Maximum age in hours to consider "fresh" (default: 20h).
+
+    Returns:
+        True if file exists, is non-empty, and was modified within max_age_hours.
+    """
+    csv_path = Path(csv_path)
+    if not csv_path.exists():
+        return False
+    if csv_path.stat().st_size == 0:
+        return False
+    age_hours = (time.time() - csv_path.stat().st_mtime) / 3600
+    return age_hours < max_age_hours
+
 
 # ============================================================
 # API KEY REGISTRATION
