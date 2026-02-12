@@ -17,8 +17,11 @@
 | 6. Thị trường quốc tế | `collect_market.py` | MSN Finance, FMARKET, KBS | 42 | OK |
 | 7. Giá hàng hóa | `collect_commodity.py` | vnstock_data (premium) | 15 | OK (premium) |
 | 8. Kinh tế vĩ mô | `collect_macro.py` | vnstock_data (premium) | 9 | 9/9 OK |
-| 9. Thống kê thị trường | `collect_insights.py` | vnstock (KBS + VCI) | 10 | OK |
-| **Tổng** | | | **~4,340+** | |
+| 9. Thống kê thị trường | `collect_insights.py` | vnstock_data Market+TopStock → vnstock | 10 | OK |
+| 10. Tin tức tài chính | `collect_news.py` | vnstock_news (premium) | 5+/ngày | OK (premium) |
+| 11. Chỉ báo kỹ thuật | `collect_ta.py` | vnstock_ta (premium) | ~33 + signals | OK (premium) |
+| 12. Pipeline song song | `collect_pipeline.py` | vnstock_pipeline (premium) | ~500 OHLCV | OK (premium) |
+| **Tổng** | | | **~4,900+** | |
 
 ---
 
@@ -310,9 +313,12 @@
 ## 9. Thống Kê Thị Trường / Market Insights
 
 **Script:** `scripts/collect_insights.py`
-**Nguồn:** vnstock library (KBS quote + price_board, VCI ratio_summary)
+**Nguồn:** vnstock_data `Market` + `TopStock` (VND) → fallback vnstock KBS/VCI
 **Output:** `data/insights/`
 **Cập nhật:** Incremental merge theo ngày
+
+> **Ưu tiên:** vnstock_data (premium) cho PE/PB time series chính xác từ VND.
+> Nếu không có, fallback sang vnstock (free) tính từ KBS + VCI.
 
 ### 9a. VNINDEX Lịch Sử (KBS `quote.history(get_all=True)`)
 
@@ -343,6 +349,83 @@
 | # | File | Mô tả | Các cột |
 |---|------|-------|---------|
 | 10 | `market_evaluation.csv` | Tổng hợp đánh giá thị trường hôm nay | `time, vnindex_close, vnindex_volume, market_pe_median, market_pb_median, foreign_buy_volume, foreign_sell_volume, foreign_net_volume, total_value` |
+
+---
+
+## 10. Tin Tức Tài Chính (vnstock_news)
+
+**Script:** `scripts/collect_news.py`
+**Nguồn:** vnstock_news BatchCrawler (12+ trang tin VN)
+**Output:** `data/news/`
+**Cập nhật:** Hàng ngày, 50 bài/nguồn
+
+### Nguồn tin hỗ trợ
+
+CafeF, VnExpress, VietStock, VnEconomy, Báo Đầu Tư, Tuổi Trẻ, CafeBiz, PLO, Báo Mới, The Saigon Times, Nhịp Cầu Đầu Tư, Công Thương
+
+### Output
+
+| # | File | Mô tả | Các cột |
+|---|------|-------|---------|
+| 1 | `YYYY-MM-DD/cafef.csv` | Tin CafeF hôm nay | `url, title, short_description, content, publish_time, author, category, image_url` |
+| 2 | `YYYY-MM-DD/vnexpress.csv` | Tin VnExpress hôm nay | (giống trên) |
+| 3 | `YYYY-MM-DD/vietstock.csv` | Tin VietStock hôm nay | (giống trên) |
+| 4 | `YYYY-MM-DD/vneconomy.csv` | Tin VnEconomy hôm nay | (giống trên) |
+| 5 | `YYYY-MM-DD/baodautu.csv` | Tin Báo Đầu Tư hôm nay | (giống trên) |
+| 6 | `trending.csv` | Xu hướng từ khóa (append) | `date, keyword, count` |
+
+---
+
+## 11. Chỉ Báo Kỹ Thuật (vnstock_ta)
+
+**Script:** `scripts/collect_ta.py`
+**Nguồn:** vnstock_ta Indicator (21+ chỉ báo)
+**Output:** `data/ta/`
+**Cập nhật:** Hàng ngày
+
+### Chỉ báo tính toán
+
+SMA(20,50), EMA(12,26), RSI(14), MACD(12,26,9), Bollinger Bands(20,2), Stochastic(14,3,3), ADX(14)
+
+### Output
+
+| # | File | Mô tả | Các cột chính |
+|---|------|-------|---------------|
+| 1 | `indices/VNINDEX.csv` | TA cho VNINDEX | `time, open, high, low, close, volume, SMA_20, SMA_50, EMA_12, EMA_26, RSI_14, MACD, MACDh, MACDs, BBL, BBM, BBU, STOCHk, STOCHd, ADX_14` |
+| 2 | `indices/VN30.csv` | TA cho VN30 | (giống trên) |
+| 3 | `indices/HNX.csv` | TA cho HNX | (giống trên) |
+| 4 | `stocks/{symbol}.csv` | TA cho từng mã VN30 (~30 file) | (giống trên) |
+| 5 | `signals.csv` | Tổng hợp tín hiệu mới nhất | `symbol, type, time, close, RSI_14, MACDh, SMA_20, SMA_50, BBL, BBU, STOCHk, ADX_14, signal` |
+
+### Tín hiệu
+
+- `RSI_OVERBOUGHT`: RSI > 70 (quá mua)
+- `RSI_OVERSOLD`: RSI < 30 (quá bán)
+- `MACD_BULLISH`: MACD histogram > 0
+- `MACD_BEARISH`: MACD histogram < 0
+- `NEUTRAL`: Không có tín hiệu đặc biệt
+
+---
+
+## 12. Pipeline Song Song (vnstock_pipeline)
+
+**Script:** `scripts/collect_pipeline.py`
+**Nguồn:** vnstock_pipeline (parallel processing, 10x faster)
+**Output:** `data/pipeline/`
+**Cập nhật:** Hàng ngày
+
+### Tính năng
+
+- Tải OHLCV song song cho ~200-500 mã với retry và rate limiting
+- Tự điều chỉnh concurrency: <50 mã → 3 workers, 100+ → 2 workers, 500+ → 1 worker
+- Hỗ trợ xuất CSV (mặc định), Parquet, DuckDB
+
+### Output
+
+| # | File | Mô tả |
+|---|------|-------|
+| 1 | `ohlcv/{symbol}.csv` | OHLCV daily cho ~200 mã | `time, open, high, low, close, volume` |
+| 2 | `financials/` | BCTC (balance_sheet, income, cash_flow, ratio) | Theo cấu trúc vnstock_pipeline |
 
 ---
 
@@ -431,6 +514,30 @@ data/
 ├── insights/                      # 10 thống kê TT (premium)
 │   ├── market_pe.csv
 │   └── ...
+│
+├── news/                          # Tin tức tài chính (premium)
+│   ├── 2026-02-12/
+│   │   ├── cafef.csv
+│   │   ├── vnexpress.csv
+│   │   └── ...
+│   ├── latest -> 2026-02-12
+│   └── trending.csv
+│
+├── ta/                            # Chỉ báo kỹ thuật (premium)
+│   ├── indices/
+│   │   ├── VNINDEX.csv
+│   │   ├── VN30.csv
+│   │   └── HNX.csv
+│   ├── stocks/
+│   │   ├── VNM.csv
+│   │   └── ...
+│   └── signals.csv
+│
+├── pipeline/                      # Pipeline song song (premium)
+│   ├── ohlcv/
+│   │   ├── VNM.csv
+│   │   └── ...
+│   └── financials/
 │
 ├── gold_prices.csv                # Giá vàng SJC
 ├── exchange_rates.csv             # Tỷ giá VCB
