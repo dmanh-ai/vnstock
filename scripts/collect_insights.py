@@ -63,6 +63,16 @@ INSIGHT_METHODS = [
 # COLLECTOR
 # ============================================================
 
+def _discover_methods(obj, class_name: str):
+    """Log tất cả public methods có thể gọi được trên object."""
+    public = [
+        m for m in dir(obj)
+        if not m.startswith("_") and callable(getattr(obj, m, None))
+    ]
+    logger.info(f"  [DISCOVERY] {class_name} có {len(public)} public methods: {public}")
+    return public
+
+
 def collect_insights(only: list = None):
     """Thu thập thống kê thị trường từ vnstock_data Trading (source='cafef')."""
     try:
@@ -84,7 +94,23 @@ def collect_insights(only: list = None):
         logger.error(f"Không thể khởi tạo Trading(source='cafef'): {e}")
         return False
 
-    methods = only if only else INSIGHT_METHODS
+    # Discovery: log tất cả methods để debug
+    available = _discover_methods(trading, "Trading(source='cafef')")
+
+    # If explicit list provided, use that; otherwise auto-discover
+    if only:
+        methods = only
+    else:
+        # Try configured methods first, fall back to auto-discovery
+        methods = [m for m in INSIGHT_METHODS if m in available]
+        if not methods:
+            # None of the configured methods exist - use all discovered methods
+            # (exclude common non-data methods)
+            skip = {'to_dict', 'to_json', 'to_string', 'keys', 'values', 'items',
+                    'get', 'set', 'update', 'copy', 'clear', 'pop', 'help'}
+            methods = [m for m in available if m not in skip]
+            logger.info(f"  Configured methods không khả dụng, dùng auto-discovery: {methods}")
+
     success = 0
     errors = []
 
@@ -99,13 +125,17 @@ def collect_insights(only: list = None):
 
         try:
             method = getattr(trading, method_name, None)
-            if method is None:
+            if method is None or not callable(method):
                 logger.warning(f"  {method_name}: method không tồn tại, bỏ qua.")
                 errors.append(method_name)
                 continue
 
             logger.info(f"  Đang lấy {method_name}...")
             df = method()
+
+            if not isinstance(df, pd.DataFrame):
+                logger.warning(f"  {method_name}: kết quả không phải DataFrame ({type(df).__name__}), bỏ qua.")
+                continue
 
             if df is not None and not df.empty:
                 # Incremental: merge with existing data

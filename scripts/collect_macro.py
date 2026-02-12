@@ -13,8 +13,6 @@ Output:
     data/macro/money_supply.csv     - Cung tiền M2
     data/macro/exchange_rate.csv    - Tỷ giá hối đoái
     data/macro/population_labor.csv - Dân số và lao động
-    data/macro/credit.csv           - Tín dụng
-    data/macro/interest_rate.csv    - Lãi suất
 
 Cách chạy:
     python scripts/collect_macro.py                    # Tất cả
@@ -45,7 +43,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("macro")
 
-# Tất cả chỉ số vĩ mô có sẵn
+# Tất cả chỉ số vĩ mô có sẵn (gọi không tham số)
 MACRO_METHODS = [
     "gdp",
     "cpi",
@@ -55,15 +53,48 @@ MACRO_METHODS = [
     "fdi",
     "money_supply",
     "exchange_rate",
-    "population_labor",
-    "credit",
-    "interest_rate",
 ]
+
+# Methods cần tham số đặc biệt
+MACRO_METHODS_WITH_PARAMS = {
+    "population_labor": {"period": "year", "start": 2000},
+}
 
 
 # ============================================================
 # COLLECTOR
 # ============================================================
+
+def _discover_methods(obj, class_name: str):
+    """Log tất cả public methods có thể gọi được trên object."""
+    public = [
+        m for m in dir(obj)
+        if not m.startswith("_") and callable(getattr(obj, m, None))
+    ]
+    logger.info(f"  [DISCOVERY] {class_name} có {len(public)} public methods: {public}")
+    return public
+
+
+def _save_incremental(df, csv_path, method_name):
+    """Merge DataFrame mới với dữ liệu cũ, loại trùng."""
+    if csv_path.exists():
+        try:
+            existing = pd.read_csv(csv_path)
+            date_col = None
+            for col in ['date', 'time', 'Date', 'Time', 'period', 'year']:
+                if col in df.columns:
+                    date_col = col
+                    break
+            if date_col:
+                df = pd.concat([existing, df], ignore_index=True)
+                df = df.drop_duplicates(subset=[date_col], keep="last")
+                df = df.sort_values(date_col).reset_index(drop=True)
+                logger.info(f"  {method_name}: merged ({len(df)} rows total)")
+        except Exception:
+            pass
+    df.to_csv(csv_path, index=False, encoding="utf-8-sig")
+    logger.info(f"  {method_name}: {len(df)} rows → {csv_path.name}")
+
 
 def collect_macro(only: list = None):
     """Thu thập dữ liệu kinh tế vĩ mô từ vnstock_data Macro."""
@@ -82,7 +113,12 @@ def collect_macro(only: list = None):
     logger.info("Khởi tạo Macro(source='mbk')")
     macro = Macro(source='mbk')
 
-    methods = only if only else MACRO_METHODS
+    # Discovery: log tất cả methods để debug
+    _discover_methods(macro, "Macro(source='mbk')")
+
+    # Build method list
+    all_methods = list(MACRO_METHODS) + list(MACRO_METHODS_WITH_PARAMS.keys())
+    methods = only if only else all_methods
     success = 0
     errors = []
 
@@ -103,28 +139,13 @@ def collect_macro(only: list = None):
                 continue
 
             logger.info(f"  Đang lấy {method_name}...")
-            df = method()
+
+            # Call with special params if configured
+            params = MACRO_METHODS_WITH_PARAMS.get(method_name, {})
+            df = method(**params) if params else method()
 
             if df is not None and not df.empty:
-                # Incremental merge: nối với dữ liệu cũ, loại trùng
-                if csv_path.exists():
-                    try:
-                        existing = pd.read_csv(csv_path)
-                        date_col = None
-                        for col in ['date', 'time', 'Date', 'Time', 'period', 'year']:
-                            if col in df.columns:
-                                date_col = col
-                                break
-                        if date_col:
-                            df = pd.concat([existing, df], ignore_index=True)
-                            df = df.drop_duplicates(subset=[date_col], keep="last")
-                            df = df.sort_values(date_col).reset_index(drop=True)
-                            logger.info(f"  {method_name}: merged ({len(df)} rows total)")
-                    except Exception:
-                        pass
-
-                df.to_csv(csv_path, index=False, encoding="utf-8-sig")
-                logger.info(f"  {method_name}: {len(df)} rows → {csv_path.name}")
+                _save_incremental(df, csv_path, method_name)
                 success += 1
             else:
                 logger.warning(f"  {method_name}: không có dữ liệu.")
@@ -159,7 +180,8 @@ def main():
     logger.info("=" * 60)
     logger.info("THU THẬP DỮ LIỆU KINH TẾ VĨ MÔ")
     logger.info(f"Nguồn: vnstock_data Macro (MBK)")
-    logger.info(f"Chỉ số: {args.only or 'Tất cả ' + str(len(MACRO_METHODS)) + ' loại'}")
+    all_count = len(MACRO_METHODS) + len(MACRO_METHODS_WITH_PARAMS)
+    logger.info(f"Chỉ số: {args.only or 'Tất cả ' + str(all_count) + ' loại'}")
     logger.info(f"Output: {DATA_DIR}")
     logger.info("=" * 60)
 
