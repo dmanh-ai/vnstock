@@ -114,7 +114,29 @@ jobs:
           #   API key: from env var
           printf "\n\n\n2\n${VNSTOCK_API_KEY}\n" | /tmp/vnstock-cli-installer.run 2>&1
 
-          echo "=== [3/3] Verification ==="
+        env:
+          VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
+
+      - name: "[0.1] Link venv packages to system Python"
+        if: steps.check_day.outputs.skip != 'true'
+        run: |
+          # CLI installer cài packages vào /home/runner/.venv nhưng workflow
+          # dùng system Python (actions/setup-python). Thêm venv site-packages
+          # vào PYTHONPATH để system Python import được vnstock_data, vnii, etc.
+          # Điều này cũng fix lỗi vnai detect tier = "free" (do thiếu vnii).
+          VENV_SP=$(find /home/runner/.venv/lib -name "site-packages" -type d 2>/dev/null | head -1)
+          if [ -n "$VENV_SP" ] && [ -d "$VENV_SP" ]; then
+            echo "PYTHONPATH=${VENV_SP}${PYTHONPATH:+:$PYTHONPATH}" >> $GITHUB_ENV
+            echo "Found venv site-packages: $VENV_SP"
+            ls "$VENV_SP" | grep -E "^(vnii|vnstock_data|vnstock_news|vnstock_ta|vnstock_pipeline)" || true
+          else
+            echo "Warning: venv site-packages not found at /home/runner/.venv"
+          fi
+
+      - name: "[0.2] Verify premium packages"
+        if: steps.check_day.outputs.skip != 'true'
+        continue-on-error: true
+        run: |
           python -c "
           print('Package status:')
           for pkg in ['vnii', 'vnai', 'vnstock_data', 'vnstock_news', 'vnstock_ta', 'vnstock_pipeline']:
