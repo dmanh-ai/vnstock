@@ -17,7 +17,7 @@
 | 6. Thị trường quốc tế | `collect_market.py` | MSN Finance, FMARKET, KBS | 42 | OK |
 | 7. Giá hàng hóa | `collect_commodity.py` | vnstock_data (premium) | 15 | OK (premium) |
 | 8. Kinh tế vĩ mô | `collect_macro.py` | vnstock_data (premium) | 9 | 9/9 OK |
-| 9. Thống kê thị trường | `collect_insights.py` | vnstock_data (premium) | 10 | Đang sửa |
+| 9. Thống kê thị trường | `collect_insights.py` | vnstock (KBS + VCI) | 10 | OK |
 | **Tổng** | | | **~4,340+** | |
 
 ---
@@ -307,27 +307,42 @@
 
 ---
 
-## 9. Thống Kê Thị Trường / Market Insights (Premium)
+## 9. Thống Kê Thị Trường / Market Insights
 
 **Script:** `scripts/collect_insights.py`
-**Nguồn:** `vnstock_data.Trading(source='cafef', symbol='VNINDEX')` - Gói premium
+**Nguồn:** vnstock library (KBS quote + price_board, VCI ratio_summary)
 **Output:** `data/insights/`
-**Trạng thái:** Đang sửa - auto-discovery để tìm đúng tên methods
+**Cập nhật:** Incremental merge theo ngày
 
-| # | File | Chỉ số (dự kiến) |
-|---|------|-------------------|
-| 1 | `market_pe.csv` | P/E thị trường |
-| 2 | `market_pb.csv` | P/B thị trường |
-| 3 | `market_value.csv` | Giá trị giao dịch |
-| 4 | `market_volume.csv` | Khối lượng giao dịch |
-| 5 | `market_deal.csv` | Số lượng deal |
-| 6 | `market_foreign_buy.csv` | NDTNN mua ròng |
-| 7 | `market_foreign_sell.csv` | NDTNN bán ròng |
-| 8 | `market_gainer.csv` | Top tăng giá |
-| 9 | `market_loser.csv` | Top giảm giá |
-| 10 | `market_evaluation.csv` | Đánh giá thị trường |
+### 9a. VNINDEX Lịch Sử (KBS `quote.history(get_all=True)`)
 
-> **Lưu ý:** Script đã thêm auto-discovery - nếu các method trên không tồn tại, sẽ tự động tìm và gọi tất cả methods có sẵn trên Trading class.
+| # | File | Mô tả | Các cột |
+|---|------|-------|---------|
+| 1 | `market_value.csv` | Giá trị giao dịch VNINDEX lịch sử (1 năm) | `time, total_value` |
+| 2 | `market_volume.csv` | Khối lượng giao dịch VNINDEX lịch sử | `time, volume` |
+| 3 | `market_deal.csv` | Số lượng deal VNINDEX lịch sử | `time, total_trades` |
+| 4 | `market_foreign_buy.csv` | KL NDTNN mua lịch sử | `time, foreign_buy_volume` |
+| 5 | `market_foreign_sell.csv` | KL NDTNN bán lịch sử | `time, foreign_sell_volume, foreign_net_volume` |
+
+### 9b. P/E, P/B Thị Trường (VCI `ratio_summary()` cho VN30)
+
+| # | File | Mô tả | Các cột |
+|---|------|-------|---------|
+| 6 | `market_pe.csv` | P/E bình quân thị trường (median VN30) | `time, market_pe_median, market_pe_mean, num_stocks, pe_min, pe_max` |
+| 7 | `market_pb.csv` | P/B bình quân thị trường (median VN30) | `time, market_pb_median, market_pb_mean, num_stocks, pb_min, pb_max` |
+
+### 9c. Top Tăng/Giảm (KBS `price_board(get_all=True)`)
+
+| # | File | Mô tả | Các cột |
+|---|------|-------|---------|
+| 8 | `market_gainer.csv` | Top 30 CP tăng giá mạnh nhất HOSE hôm nay | `symbol, close_price, percent_change, total_trades, total_value, foreign_buy_volume, foreign_sell_volume, date` |
+| 9 | `market_loser.csv` | Top 30 CP giảm giá mạnh nhất HOSE hôm nay | (giống trên) |
+
+### 9d. Đánh Giá Tổng Hợp
+
+| # | File | Mô tả | Các cột |
+|---|------|-------|---------|
+| 10 | `market_evaluation.csv` | Tổng hợp đánh giá thị trường hôm nay | `time, vnindex_close, vnindex_volume, market_pe_median, market_pb_median, foreign_buy_volume, foreign_sell_volume, foreign_net_volume, total_value` |
 
 ---
 

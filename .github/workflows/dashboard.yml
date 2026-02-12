@@ -237,7 +237,7 @@ jobs:
           VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
           VNSTOCK_RATE_LIMIT: '500'
 
-      # ========== PHẦN 8: MARKET INSIGHTS (vnstock_data) ==========
+      # ========== PHẦN 8: MARKET INSIGHTS (vnstock KBS + VCI) ==========
       - name: "[8/8] Thu thập thống kê thị trường (Market Insights)"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
