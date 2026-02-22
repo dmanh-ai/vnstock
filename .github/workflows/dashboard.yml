@@ -2,8 +2,10 @@ name: Dashboard Data Collector
 
 on:
   schedule:
-    # 14:50 giờ Việt Nam (UTC+7) = 07:50 UTC, thứ 2-6
-    - cron: '50 7 * * 1-5'
+    # Phiên sáng: 11:35 giờ Việt Nam (UTC+7) = 04:35 UTC, thứ 2-6
+    - cron: '35 4 * * 1-5'
+    # Phiên chiều: 15:05 giờ Việt Nam (UTC+7) = 08:05 UTC, thứ 2-6
+    - cron: '5 8 * * 1-5'
   workflow_dispatch:
     inputs:
       date:
@@ -18,6 +20,15 @@ on:
         description: 'Ngày kết thúc chỉ số (YYYY-MM-DD). Mặc định: hôm nay'
         required: false
         default: ''
+      session:
+        description: 'Phiên thu thập: midday (sáng), eod (cuối ngày), full (tất cả)'
+        required: false
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - midday
+          - eod
 
 permissions:
   contents: write
@@ -93,6 +104,38 @@ jobs:
           } || {
             echo "skip=false" >> $GITHUB_OUTPUT
           }
+
+      # ========== DETECT SESSION: MIDDAY vs EOD ==========
+      - name: Detect trading session (midday / eod)
+        id: session
+        if: steps.check_day.outputs.skip != 'true'
+        run: |
+          # Nếu chạy thủ công → dùng input session (mặc định: full)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            SESSION="${{ github.event.inputs.session || 'full' }}"
+          else
+            # Scheduled → detect từ giờ UTC hiện tại
+            HOUR_UTC=$(date -u +%H)
+            if [ "$HOUR_UTC" -lt 6 ]; then
+              # 04:35 UTC = 11:35 VN → phiên sáng (midday)
+              SESSION="midday"
+            else
+              # 08:05 UTC = 15:05 VN → phiên chiều (eod)
+              SESSION="eod"
+            fi
+          fi
+
+          echo "session=$SESSION" >> $GITHUB_OUTPUT
+          echo "Phiên thu thập: $SESSION"
+
+          # Xác định label cho commit message
+          if [ "$SESSION" = "midday" ]; then
+            echo "label=midday-1130" >> $GITHUB_OUTPUT
+          elif [ "$SESSION" = "eod" ]; then
+            echo "label=eod-1500" >> $GITHUB_OUTPUT
+          else
+            echo "label=full" >> $GITHUB_OUTPUT
+          fi
 
       # ========== PHẦN 0: CÀI ĐẶT VNSTOCK PREMIUM ==========
       # Theo hướng dẫn: https://vnstocks.com/onboard-member/cai-dat-go-loi/cai-dat-nang-cao
@@ -170,8 +213,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 2: THU THẬP OHLCV TOP 500 CỔ PHIẾU ==========
+      # Chỉ chạy phiên chiều/full (dữ liệu OHLCV cần cả ngày)
       - name: "[2/15] Thu thập OHLCV top 500 cổ phiếu vốn hóa"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_stocks.py
@@ -208,8 +252,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 5: FX + CRYPTO + WORLD INDICES + FUND ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[5/15] Thu thập FX, Crypto, World Indices, Fund, Listing"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_market.py
@@ -218,8 +263,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 6: GIÁ HÀNG HÓA (vnstock_data) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[6/15] Thu thập giá hàng hóa (CommodityPrice)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_commodity.py
@@ -228,8 +274,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 7: DỮ LIỆU VĨ MÔ (vnstock_data) ==========
+      # Chỉ chạy phiên chiều/full (macro không thay đổi trong ngày)
       - name: "[7/15] Thu thập dữ liệu vĩ mô (Macro)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_macro.py
@@ -238,8 +285,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 8: MARKET INSIGHTS (vnstock_data Market + TopStock) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[8/15] Thu thập thống kê thị trường (Market Insights)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_insights.py
@@ -248,8 +296,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 9: TIN TỨC TÀI CHÍNH (vnstock_news) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[9/15] Thu thập tin tức tài chính (vnstock_news)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_news.py --limit 50
@@ -257,8 +306,9 @@ jobs:
           VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
 
       # ========== PHẦN 10: CHỈ BÁO KỸ THUẬT (vnstock_ta) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[10/15] Tính chỉ báo kỹ thuật (vnstock_ta)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_ta.py
@@ -267,8 +317,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 11: PIPELINE SONG SONG (vnstock_pipeline) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[11/15] Pipeline tải OHLCV song song (vnstock_pipeline)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_pipeline.py --only ohlcv --top-n 200 --max-workers 2
@@ -277,8 +328,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 12: INTRADAY (KBS Quote) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[12/15] Thu thập dữ liệu intraday (KBS Quote.intraday)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_intraday.py --top-n 50
@@ -287,8 +339,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 13: COMPANY EXTRA (Reports, Ownership, Capital History) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[13/15] Thu thập company data bổ sung (reports, ownership, capital)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_company_extra.py --top-n 50
@@ -297,8 +350,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 14: TRADING DETAIL (Foreign, Prop, Stats) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[14/15] Thu thập giao dịch chi tiết (foreign/prop trade, stats)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_trading_detail.py --top-n 50
@@ -307,8 +361,9 @@ jobs:
           VNSTOCK_RATE_LIMIT: '500'
 
       # ========== PHẦN 15: FINANCE EXTRA (VCI notes/ratios + MAS) ==========
+      # Chỉ chạy phiên chiều/full
       - name: "[15/15] Thu thập tài chính bổ sung (VCI notes + MAS)"
-        if: steps.check_day.outputs.skip != 'true'
+        if: steps.check_day.outputs.skip != 'true' && steps.session.outputs.session != 'midday'
         continue-on-error: true
         run: |
           python scripts/collect_finance_extra.py --top-n 50
@@ -320,6 +375,10 @@ jobs:
       - name: Show collected files
         if: steps.check_day.outputs.skip != 'true'
         run: |
+          echo "=========================================="
+          echo "  PHIÊN: ${{ steps.session.outputs.session }} | NGÀY: ${{ steps.date.outputs.date }}"
+          echo "=========================================="
+          echo ""
           echo "=========================================="
           echo "  DỮ LIỆU CỔ PHIẾU (${{ steps.date.outputs.date }})"
           echo "=========================================="
@@ -431,7 +490,8 @@ jobs:
             echo "Không có dữ liệu mới."
           else
             DATE=${{ steps.date.outputs.date }}
-            git commit -m "data: dashboard $DATE"
+            SESSION_LABEL=${{ steps.session.outputs.label }}
+            git commit -m "data: dashboard $DATE [$SESSION_LABEL]"
             git push
           fi
 
