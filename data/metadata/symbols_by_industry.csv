@@ -27,6 +27,21 @@ THT,10,Khai khoáng
 TMB,10,Khai khoáng
 TNT,10,Khai khoáng
 TVD,10,Khai khoáng
+DHP,27,Thiết bị điện
+DQC,27,Thiết bị điện
+GEE,27,Thiết bị điện
+GEX,27,Thiết bị điện
+KSD,27,Thiết bị điện
+MBG,27,Thiết bị điện
+PAC,27,Thiết bị điện
+PHN,27,Thiết bị điện
+POT,27,Thiết bị điện
+RAL,27,Thiết bị điện
+SAM,27,Thiết bị điện
+TSB,27,Thiết bị điện
+TYA,27,Thiết bị điện
+VTB,27,Thiết bị điện
+VTH,27,Thiết bị điện
 CMC,1,Bán buôn
 DGW,1,Bán buôn
 FID,1,Bán buôn
@@ -207,21 +222,6 @@ PRE,2,Bảo hiểm
 PTI,2,Bảo hiểm
 PVI,2,Bảo hiểm
 VNR,2,Bảo hiểm
-DHP,27,Thiết bị điện
-DQC,27,Thiết bị điện
-GEE,27,Thiết bị điện
-GEX,27,Thiết bị điện
-KSD,27,Thiết bị điện
-MBG,27,Thiết bị điện
-PAC,27,Thiết bị điện
-PHN,27,Thiết bị điện
-POT,27,Thiết bị điện
-RAL,27,Thiết bị điện
-SAM,27,Thiết bị điện
-TSB,27,Thiết bị điện
-TYA,27,Thiết bị điện
-VTB,27,Thiết bị điện
-VTH,27,Thiết bị điện
 AAM,20,Chế biến Thủy sản
 ABT,20,Chế biến Thủy sản
 ACL,20,Chế biến Thủy sản
@@ -236,97 +236,6 @@ KHS,20,Chế biến Thủy sản
 SJ1,20,Chế biến Thủy sản
 TFC,20,Chế biến Thủy sản
 VHC,20,Chế biến Thủy sản
-AAV,3,Bất động sản
-AGG,3,Bất động sản
-API,3,Bất động sản
-BAX,3,Bất động sản
-BCE,3,Bất động sản
-BCM,3,Bất động sản
-CCL,3,Bất động sản
-CDC,3,Bất động sản
-CEO,3,Bất động sản
-CIG,3,Bất động sản
-CKG,3,Bất động sản
-CRE,3,Bất động sản
-CRV,3,Bất động sản
-CSC,3,Bất động sản
-D11,3,Bất động sản
-D2D,3,Bất động sản
-DIG,3,Bất động sản
-DRH,3,Bất động sản
-DTA,3,Bất động sản
-DTD,3,Bất động sản
-DXG,3,Bất động sản
-DXS,3,Bất động sản
-EVG,3,Bất động sản
-FDC,3,Bất động sản
-FIR,3,Bất động sản
-HAR,3,Bất động sản
-HDC,3,Bất động sản
-HDG,3,Bất động sản
-HLD,3,Bất động sản
-HPX,3,Bất động sản
-HQC,3,Bất động sản
-HU1,3,Bất động sản
-ICG,3,Bất động sản
-IDJ,3,Bất động sản
-IDV,3,Bất động sản
-IJC,3,Bất động sản
-ITC,3,Bất động sản
-KBC,3,Bất động sản
-KDH,3,Bất động sản
-KHG,3,Bất động sản
-KOS,3,Bất động sản
-KSF,3,Bất động sản
-L14,3,Bất động sản
-LDG,3,Bất động sản
-LGL,3,Bất động sản
-LHG,3,Bất động sản
-NBB,3,Bất động sản
-NDN,3,Bất động sản
-NHA,3,Bất động sản
-NLG,3,Bất động sản
-NRC,3,Bất động sản
-NTC,3,Bất động sản
-NTL,3,Bất động sản
-NVL,3,Bất động sản
-PDR,3,Bất động sản
-PTL,3,Bất động sản
-PV2,3,Bất động sản
-QCG,3,Bất động sản
-RCL,3,Bất động sản
-SCR,3,Bất động sản
-SDU,3,Bất động sản
-SGR,3,Bất động sản
-SJS,3,Bất động sản
-SZB,3,Bất động sản
-SZC,3,Bất động sản
-SZL,3,Bất động sản
-TAL,3,Bất động sản
-TCH,3,Bất động sản
-TDC,3,Bất động sản
-TDH,3,Bất động sản
-TIG,3,Bất động sản
-TIP,3,Bất động sản
-TIX,3,Bất động sản
-TN1,3,Bất động sản
-V21,3,Bất động sản
-VC3,3,Bất động sản
-VC7,3,Bất động sản
-VHM,3,Bất động sản
-VIC,3,Bất động sản
-VPH,3,Bất động sản
-VPI,3,Bất động sản
-VRC,3,Bất động sản
-VRE,3,Bất động sản
-VTJ,3,Bất động sản
-INC,28,"Dịch vụ tư vấn, hỗ trợ"
-PPE,28,"Dịch vụ tư vấn, hỗ trợ"
-SDC,28,"Dịch vụ tư vấn, hỗ trợ"
-TV2,28,"Dịch vụ tư vấn, hỗ trợ"
-TV3,28,"Dịch vụ tư vấn, hỗ trợ"
-TV4,28,"Dịch vụ tư vấn, hỗ trợ"
-VNC,28,"Dịch vụ tư vấn, hỗ trợ"
 AGR,5,Chứng khoán
 APG,5,Chứng khoán
 APS,5,Chứng khoán
@@ -420,6 +329,13 @@ VSM,23,Vận tải - kho bãi
 VTO,23,Vận tải - kho bãi
 VTP,23,Vận tải - kho bãi
 WCS,23,Vận tải - kho bãi
+INC,28,"Dịch vụ tư vấn, hỗ trợ"
+PPE,28,"Dịch vụ tư vấn, hỗ trợ"
+SDC,28,"Dịch vụ tư vấn, hỗ trợ"
+TV2,28,"Dịch vụ tư vấn, hỗ trợ"
+TV3,28,"Dịch vụ tư vấn, hỗ trợ"
+TV4,28,"Dịch vụ tư vấn, hỗ trợ"
+VNC,28,"Dịch vụ tư vấn, hỗ trợ"
 ACC,21,Vật liệu xây dựng
 BCC,21,Vật liệu xây dựng
 BTS,21,Vật liệu xây dựng
@@ -482,10 +398,90 @@ VAB,11,Ngân hàng
 VCB,11,Ngân hàng
 VIB,11,Ngân hàng
 VPB,11,Ngân hàng
-BRC,17,Sản phẩm cao su
-CSM,17,Sản phẩm cao su
-DRC,17,Sản phẩm cao su
-SRC,17,Sản phẩm cao su
+AAV,3,Bất động sản
+AGG,3,Bất động sản
+API,3,Bất động sản
+BAX,3,Bất động sản
+BCE,3,Bất động sản
+BCM,3,Bất động sản
+CCL,3,Bất động sản
+CDC,3,Bất động sản
+CEO,3,Bất động sản
+CIG,3,Bất động sản
+CKG,3,Bất động sản
+CRE,3,Bất động sản
+CRV,3,Bất động sản
+CSC,3,Bất động sản
+D11,3,Bất động sản
+D2D,3,Bất động sản
+DIG,3,Bất động sản
+DRH,3,Bất động sản
+DTA,3,Bất động sản
+DTD,3,Bất động sản
+DXG,3,Bất động sản
+DXS,3,Bất động sản
+EVG,3,Bất động sản
+FDC,3,Bất động sản
+FIR,3,Bất động sản
+HAR,3,Bất động sản
+HDC,3,Bất động sản
+HDG,3,Bất động sản
+HLD,3,Bất động sản
+HPX,3,Bất động sản
+HQC,3,Bất động sản
+HU1,3,Bất động sản
+ICG,3,Bất động sản
+IDJ,3,Bất động sản
+IDV,3,Bất động sản
+IJC,3,Bất động sản
+ITC,3,Bất động sản
+KBC,3,Bất động sản
+KDH,3,Bất động sản
+KHG,3,Bất động sản
+KOS,3,Bất động sản
+KSF,3,Bất động sản
+L14,3,Bất động sản
+LDG,3,Bất động sản
+LGL,3,Bất động sản
+LHG,3,Bất động sản
+NBB,3,Bất động sản
+NDN,3,Bất động sản
+NHA,3,Bất động sản
+NLG,3,Bất động sản
+NRC,3,Bất động sản
+NTC,3,Bất động sản
+NTL,3,Bất động sản
+NVL,3,Bất động sản
+PDR,3,Bất động sản
+PTL,3,Bất động sản
+PV2,3,Bất động sản
+QCG,3,Bất động sản
+RCL,3,Bất động sản
+SCR,3,Bất động sản
+SDU,3,Bất động sản
+SGR,3,Bất động sản
+SJS,3,Bất động sản
+SZB,3,Bất động sản
+SZC,3,Bất động sản
+SZL,3,Bất động sản
+TAL,3,Bất động sản
+TCH,3,Bất động sản
+TDC,3,Bất động sản
+TDH,3,Bất động sản
+TIG,3,Bất động sản
+TIP,3,Bất động sản
+TIX,3,Bất động sản
+TN1,3,Bất động sản
+V21,3,Bất động sản
+VC3,3,Bất động sản
+VC7,3,Bất động sản
+VHM,3,Bất động sản
+VIC,3,Bất động sản
+VPH,3,Bất động sản
+VPI,3,Bất động sản
+VRC,3,Bất động sản
+VRE,3,Bất động sản
+VTJ,3,Bất động sản
 AME,24,Xây dựng
 BCG,24,Xây dựng
 C47,24,Xây dựng
@@ -555,14 +551,6 @@ VE4,24,Xây dựng
 VMC,24,Xây dựng
 VNE,24,Xây dựng
 VSI,24,Xây dựng
-DAH,25,"Dịch vụ lưu trú, ăn uống, giải trí"
-DSN,25,"Dịch vụ lưu trú, ăn uống, giải trí"
-NVT,25,"Dịch vụ lưu trú, ăn uống, giải trí"
-OCH,25,"Dịch vụ lưu trú, ăn uống, giải trí"
-SGH,25,"Dịch vụ lưu trú, ăn uống, giải trí"
-TTT,25,"Dịch vụ lưu trú, ăn uống, giải trí"
-VNG,25,"Dịch vụ lưu trú, ăn uống, giải trí"
-VPL,25,"Dịch vụ lưu trú, ăn uống, giải trí"
 AAT,16,SX Hàng gia dụng
 ADS,16,SX Hàng gia dụng
 EVE,16,SX Hàng gia dụng
@@ -584,47 +572,18 @@ TNG,16,SX Hàng gia dụng
 TTF,16,SX Hàng gia dụng
 TVT,16,SX Hàng gia dụng
 X20,16,SX Hàng gia dụng
-CTP,12,Nông - Lâm - Ngư
-HAG,12,Nông - Lâm - Ngư
-HKT,12,Nông - Lâm - Ngư
-HPA,12,Nông - Lâm - Ngư
-HSL,12,Nông - Lâm - Ngư
-NSC,12,Nông - Lâm - Ngư
-SSC,12,Nông - Lâm - Ngư
-SVN,12,Nông - Lâm - Ngư
-VIF,12,Nông - Lâm - Ngư
-DBD,8,Chăm sóc sức khỏe
-DBT,8,Chăm sóc sức khỏe
-DCL,8,Chăm sóc sức khỏe
-DHG,8,Chăm sóc sức khỏe
-DHT,8,Chăm sóc sức khỏe
-DMC,8,Chăm sóc sức khỏe
-DP3,8,Chăm sóc sức khỏe
-DTG,8,Chăm sóc sức khỏe
-DVM,8,Chăm sóc sức khỏe
-FIT,8,Chăm sóc sức khỏe
-IMP,8,Chăm sóc sức khỏe
-LDP,8,Chăm sóc sức khỏe
-MED,8,Chăm sóc sức khỏe
-MKV,8,Chăm sóc sức khỏe
-OPC,8,Chăm sóc sức khỏe
-PMC,8,Chăm sóc sức khỏe
-PPP,8,Chăm sóc sức khỏe
-SPM,8,Chăm sóc sức khỏe
-TNH,8,Chăm sóc sức khỏe
-TRA,8,Chăm sóc sức khỏe
-VDP,8,Chăm sóc sức khỏe
-IPA,29,Tài chính khác
-OGC,29,Tài chính khác
-TVC,29,Tài chính khác
-CJC,15,"SX Thiết bị, máy móc"
-CTB,15,"SX Thiết bị, máy móc"
-CTT,15,"SX Thiết bị, máy móc"
-NAG,15,"SX Thiết bị, máy móc"
-NHH,15,"SX Thiết bị, máy móc"
-QHD,15,"SX Thiết bị, máy móc"
-SBG,15,"SX Thiết bị, máy móc"
-SHE,15,"SX Thiết bị, máy móc"
+BRC,17,Sản phẩm cao su
+CSM,17,Sản phẩm cao su
+DRC,17,Sản phẩm cao su
+SRC,17,Sản phẩm cao su
+DAH,25,"Dịch vụ lưu trú, ăn uống, giải trí"
+DSN,25,"Dịch vụ lưu trú, ăn uống, giải trí"
+NVT,25,"Dịch vụ lưu trú, ăn uống, giải trí"
+OCH,25,"Dịch vụ lưu trú, ăn uống, giải trí"
+SGH,25,"Dịch vụ lưu trú, ăn uống, giải trí"
+TTT,25,"Dịch vụ lưu trú, ăn uống, giải trí"
+VNG,25,"Dịch vụ lưu trú, ăn uống, giải trí"
+VPL,25,"Dịch vụ lưu trú, ăn uống, giải trí"
 AFX,19,Thực phẩm - Đồ uống
 ANT,19,Thực phẩm - Đồ uống
 BAF,19,Thực phẩm - Đồ uống
@@ -655,6 +614,47 @@ VCF,19,Thực phẩm - Đồ uống
 VDL,19,Thực phẩm - Đồ uống
 VHE,19,Thực phẩm - Đồ uống
 VNM,19,Thực phẩm - Đồ uống
+IPA,29,Tài chính khác
+OGC,29,Tài chính khác
+TVC,29,Tài chính khác
+CTP,12,Nông - Lâm - Ngư
+HAG,12,Nông - Lâm - Ngư
+HKT,12,Nông - Lâm - Ngư
+HPA,12,Nông - Lâm - Ngư
+HSL,12,Nông - Lâm - Ngư
+NSC,12,Nông - Lâm - Ngư
+SSC,12,Nông - Lâm - Ngư
+SVN,12,Nông - Lâm - Ngư
+VIF,12,Nông - Lâm - Ngư
+CJC,15,"SX Thiết bị, máy móc"
+CTB,15,"SX Thiết bị, máy móc"
+CTT,15,"SX Thiết bị, máy móc"
+NAG,15,"SX Thiết bị, máy móc"
+NHH,15,"SX Thiết bị, máy móc"
+QHD,15,"SX Thiết bị, máy móc"
+SBG,15,"SX Thiết bị, máy móc"
+SHE,15,"SX Thiết bị, máy móc"
+DBD,8,Chăm sóc sức khỏe
+DBT,8,Chăm sóc sức khỏe
+DCL,8,Chăm sóc sức khỏe
+DHG,8,Chăm sóc sức khỏe
+DHT,8,Chăm sóc sức khỏe
+DMC,8,Chăm sóc sức khỏe
+DP3,8,Chăm sóc sức khỏe
+DTG,8,Chăm sóc sức khỏe
+DVM,8,Chăm sóc sức khỏe
+FIT,8,Chăm sóc sức khỏe
+IMP,8,Chăm sóc sức khỏe
+LDP,8,Chăm sóc sức khỏe
+MED,8,Chăm sóc sức khỏe
+MKV,8,Chăm sóc sức khỏe
+OPC,8,Chăm sóc sức khỏe
+PMC,8,Chăm sóc sức khỏe
+PPP,8,Chăm sóc sức khỏe
+SPM,8,Chăm sóc sức khỏe
+TNH,8,Chăm sóc sức khỏe
+TRA,8,Chăm sóc sức khỏe
+VDP,8,Chăm sóc sức khỏe
 BTT,7,Bán lẻ
 CCI,7,Bán lẻ
 CMV,7,Bán lẻ
