@@ -137,13 +137,26 @@ jobs:
             echo "label=full" >> $GITHUB_OUTPUT
           fi
 
-      # ========== PHẦN 0: CÀI ĐẶT VNSTOCK PREMIUM ==========
-      # Theo hướng dẫn: https://vnstocks.com/onboard-member/cai-dat-go-loi/cai-dat-nang-cao
-      # Sử dụng CLI installer chính thức + xác thực bằng API key
-      - name: "[0] Install premium packages (CLI installer)"
+      # ========== PHẦN 0: CÀI ĐẶT VNSTOCK PREMIUM (có cache) ==========
+      # Cache thư mục .venv để tránh chạy CLI installer mỗi lần
+      # (vnstock giới hạn thiết bị, mỗi lần cài = 1 thiết bị mới)
+      - name: "[0] Cache premium packages"
+        id: cache-venv
         if: steps.check_day.outputs.skip != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            /home/runner/.venv
+            /home/runner/.vnstock
+            /home/runner/.vnai
+            /home/runner/.vnii
+          key: vnstock-premium-${{ runner.os }}-py3.12-v1
+
+      - name: "[0.1] Install premium packages (chỉ khi chưa có cache)"
+        if: steps.check_day.outputs.skip != 'true' && steps.cache-venv.outputs.cache-hit != 'true'
         continue-on-error: true
         run: |
+          echo "Cache MISS → cài đặt premium packages..."
           echo "=== [1/3] Downloading CLI installer ==="
           wget -q https://vnstocks.com/files/vnstock-cli-installer.run -O /tmp/vnstock-cli-installer.run
           chmod +x /tmp/vnstock-cli-installer.run
@@ -160,7 +173,7 @@ jobs:
         env:
           VNSTOCK_API_KEY: ${{ secrets.VNSTOCK_API_KEY }}
 
-      - name: "[0.1] Link venv packages to system Python"
+      - name: "[0.2] Link venv packages to system Python"
         if: steps.check_day.outputs.skip != 'true'
         run: |
           # CLI installer cài packages vào /home/runner/.venv nhưng workflow
@@ -171,12 +184,13 @@ jobs:
           if [ -n "$VENV_SP" ] && [ -d "$VENV_SP" ]; then
             echo "PYTHONPATH=${VENV_SP}${PYTHONPATH:+:$PYTHONPATH}" >> $GITHUB_ENV
             echo "Found venv site-packages: $VENV_SP"
+            echo "Cache hit: ${{ steps.cache-venv.outputs.cache-hit }}"
             ls "$VENV_SP" | grep -E "^(vnii|vnstock_data|vnstock_news|vnstock_ta|vnstock_pipeline)" || true
           else
             echo "Warning: venv site-packages not found at /home/runner/.venv"
           fi
 
-      - name: "[0.2] Verify premium packages"
+      - name: "[0.3] Verify premium packages"
         if: steps.check_day.outputs.skip != 'true'
         continue-on-error: true
         run: |
