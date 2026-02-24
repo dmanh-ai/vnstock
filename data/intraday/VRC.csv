@@ -1,0 +1,3 @@
+﻿time,price,volume,match_type,id,trading_date,symbol,price_change,accumulated_volume,accumulated_value
+2026-02-24 09:31:38,13.15,300,sell,2026-02-24_093138_131500_300,24/02/2026,VRC,-350.0,300,3945000.0
+2026-02-24 09:32:12,13.1,1000,sell,2026-02-24_093212_131000_1000,24/02/2026,VRC,-400.0,1300,17045000.0
