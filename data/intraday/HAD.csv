@@ -1,0 +1,3 @@
+﻿time,price,volume,match_type,id,trading_date,symbol,price_change,accumulated_volume,accumulated_value
+2026-02-25 10:41:02,14.3,400,sell,2026-02-25_104102_143000_400,25/02/2026,HAD,0.0,400,5720000.0
+2026-02-25 10:48:13,14.3,100,buy,2026-02-25_104813_143000_100,25/02/2026,HAD,0.0,500,7150000.0
